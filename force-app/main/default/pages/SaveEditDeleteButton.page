@@ -1,0 +1,30 @@
+<apex:page controller="AccountController1"  >
+    <apex:pageMessages />
+    <apex:form >
+    <apex:pageBlock id="record" >
+       <apex:pageBlockButtons >
+         <apex:commandButton action="{!save}" value="Save"  />
+         <apex:commandButton action="{!quickSave}" value="Quick save" />
+         <apex:commandButton action="{!delet}" value="del"/>
+          <apex:commandButton action="{!Refresh}" value="cancel" reRender="record" />
+           <apex:commandButton action="{!newAdd}" value="new"/>
+           <apex:commandButton action="{!editPage}"  value="edit" />
+  	   </apex:pageBlockButtons>
+        
+    	<apex:pageBlockSection columns="1"   id="EditMode" rendered="{!!b}">
+                 <apex:inputField value="{!acc.Name}"  />
+             	 <apex:inputField value="{!acc.Industry}" />
+           		 <apex:inputField value="{!acc.Rating}"  />
+            	 <apex:outputField value="{!acc.Id}"  />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1" id="ReadMode" rendered="{!b}">
+            	 <apex:outputField value="{!acc.Name}"  />
+             	 <apex:outputField value="{!acc.Industry}" />
+           		 <apex:outputField value="{!acc.Rating}"  />
+            	<apex:outputField value="{!acc.Id}" />
+        </apex:pageBlockSection>
+     
+            
+    </apex:pageBlock>
+   </apex:form>
+</apex:page>

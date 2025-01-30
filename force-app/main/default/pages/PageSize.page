@@ -1,0 +1,36 @@
+<apex:page controller="AccountPageController" >
+    <apex:form >
+        <apex:pageBlock title="Account">
+            <apex:pageBlockSection title="Account Records" columns="1">
+             
+                <apex:selectList size="1" value="{!accountRecordFilter}">
+                    <apex:actionSupport event="onchange" action="{!getAccountRecord}" status="pageStatus" rerender="table1"/>
+                    <apex:selectOption itemLabel="All Account" itemValue="AllAccount"  ></apex:selectOption>
+                    <apex:selectOption itemLabel="My Account" itemValue="MyAcc" ></apex:selectOption>
+                </apex:selectList>
+                 <apex:actionStatus id="pageStatus">
+                    <apex:facet name="start">
+                        <apex:outputPanel >
+                            <img src="C:\Users\Briskminds\Downloads\loading.gif" width="25" height="25" />
+                            <apex:outputLabel value="Loading..."/>
+                        </apex:outputPanel>            
+                    </apex:facet>
+                </apex:actionStatus>
+                <apex:pageBlockTable id="table1" value="{!accList}" var="a">
+                                        
+                    <apex:column >
+                        <apex:facet name="header">Name</apex:facet>
+                        <apex:outputLink value="/{!a.Id}" target="_blank">
+                            <apex:outputField value="{!a.Name}"/>
+                        </apex:outputLink> 
+                    </apex:column>
+                    <apex:column value="{!a.Industry}" />
+                    <apex:column value="{!a.Rating}" />    
+                    <apex:column value="{!a.Id}" /> 
+                    <apex:column value="{!a.OwnerId}" /> 
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

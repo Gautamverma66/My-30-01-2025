@@ -1,0 +1,71 @@
+<aura:component controller="ServerSidePaginationControllerClass">
+    <aura:attribute name="pageNumber" type="Integer"  default="0"/>
+    <aura:attribute name="pageSize" type="Integer"  default="10"/>
+    <aura:attribute name="TotalPages" type="integer" default="0"/>
+    <aura:attribute name="TotalRecords" type="integer" default="0"/>
+    <aura:attribute name="sortedBy" type="String" />
+    <aura:attribute name="sortDirection" type="String" default="asc"/>
+    <aura:attribute name="isAscending" type="Boolean" default="false"/>
+    <aura:attribute name="selectRecord" type="List" />
+    <aura:attribute name="listCheckbox" type="List" />
+    <aura:attribute name="listChbox" type="List" />
+    <aura:attribute name="selectobjectname" type="String" />
+    <aura:attribute name="selectList" type="List"  />
+    <aura:attribute name="records" type="Object" />
+    <aura:attribute name="column" type="List" />
+    <aura:attribute name="allFields" type="List" />
+    <aura:attribute name="isLoading" type="Boolean"  default="false"/>
+
+   
+    <aura:method name="getRecord" action="{!c.fetchRecord}" >
+    </aura:method>
+    <aura:if isTrue="{!v.isLoading}" >
+    <div class="slds-p-around_x-large">
+        <lightning:spinner alternative-text="Loading" size="large" variant="brand"></lightning:spinner>
+    </div>
+    </aura:if>
+    <div class="slds-has-flexi-truncate"  >
+      <lightning:card>
+        <div id="stats">
+            <span class="slds-text-heading_small">
+                Total Records | {!v.TotalRecords}
+            </span>
+        </div>
+      </lightning:card>
+    <lightning:datatable data="{!v.records}"
+                        keyField="Id"
+                        columns="{!v.column}"
+                        selectedRows="{!v.selectRecord}"
+                        sortedBy="{!v.sortedBy}"
+                        sortedDirection="{!v.sortDirection}"
+                        onsort="{!c.sortColumn}"
+                        onrowselection="{! c.updateSelected }"
+                      >
+    </lightning:datatable>
+    <lightning:card>
+        <div class="slds-p-around_small slds-grid slds-grid_align-spread slds-grid_vertical-align-start">
+            <div class="slds-float_left"  >
+                <div style="width: 40%;">
+                    <ui:inputSelect aura:id="pageSize" label="Records Per Page: " change="{!c.pagesizeChange}">
+                        <ui:inputSelectOption text="10" label="10" value="true"/>
+                        <ui:inputSelectOption text="15" label="15"/>
+                        <ui:inputSelectOption text="20" label="20"/>
+                    </ui:inputSelect>
+                    <br/>
+                </div>
+            </div>
+            <div class="inline-container" >
+                <lightning:button variant="brand" label="First"  onclick="{!c.handleFirst}" disabled="{! v.pageNumber == 1}"/>
+                <lightning:button variant="brand" label="Prev"   onclick="{!c.handlePrev}" disabled="{! v.pageNumber == 1}"/>
+                <lightning:button variant="brand" label="Next"   onclick="{!c.handleNext}" disabled="{! v.pageNumber == v.TotalPages}"/>
+                <lightning:button variant="brand" label="Last"   onclick="{!c.handleLast}" disabled="{! v.pageNumber == v.TotalPages}"/>
+            </div>
+            <div id="stats">
+                <span class="slds-text-heading_small">
+                    Page {!v.pageNumber} | {!v.TotalPages}
+                </span>
+            </div>
+        </div>         
+    </lightning:card>
+</div>
+</aura:component>

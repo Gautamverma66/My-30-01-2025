@@ -1,0 +1,34 @@
+<apex:page controller="FilterRecords">
+    <apex:form >
+    <apex:pageBlock >
+        
+        <apex:pageBlockButtons >
+            
+            <apex:commandButton action="{!filter1}" value="All Records" id="abc"  />
+
+
+            
+        </apex:pageBlockButtons>
+        
+       
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!AllRec}" var="list"  >
+                <apex:column headerValue="Account Name" >
+                    <apex:inputField value="{!list.Name}" />
+                </apex:column>
+                <apex:column headerValue="Industry" >
+                    <apex:inputField value="{!list.Industry}" />
+                </apex:column>
+                <apex:column headerValue="Rating" >
+                    <apex:inputField value="{!list.Rating}" />
+                </apex:column>
+                <apex:column headerValue="Id" >
+                    <apex:outputField value="{!list.Id}" />
+                </apex:column>
+            </apex:pageBlockTable>
+           
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+     </apex:form>
+    
+</apex:page>

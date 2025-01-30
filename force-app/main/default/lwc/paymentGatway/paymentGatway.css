@@ -1,0 +1,76 @@
+.outerBox{
+    width: 70%;
+    height: 650px;
+    background-repeat: no-repeat;
+    background-image: url('/resource/AuthorizeBackgroundImg');
+    background-size: 900px 900px;
+    margin-left: 350px;
+ }
+ .innerBox1{
+     background-color: whitesmoke; 
+     width:65%; 
+     height:80% ; 
+     margin-left:70px; 
+     margin-top:10px; 
+     padding-top:28px;
+ }
+ .innerBox2{
+     background-color: rgb(231, 231, 231); 
+     height:96%; 
+     width:95% ; 
+     margin-left: 18px;
+ }
+ .innerBox3{
+     background-image: url('/resource/AuthorizeBackgroundSecond');
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     height: 40%;
+     color: white;
+ }
+ .customButton{
+     background-color: green;
+     height: 30px;
+     margin-left: 10px;
+     margin-right: 10px;
+     border-radius: 4px;
+     padding-top: 5px;
+     margin-top: 30px;
+ }
+ .echeckPage{
+     margin-left: 270px;
+     margin-top: 20px;
+ }
+ .cvvNumber{
+     padding-left: 40px;
+     width : 425px;
+ }
+ .comboboxContainer{
+     display:inline-flex; 
+     margin:10px;
+   
+ }
+ .monthCombobox{
+     width: 120px;
+   
+ }
+ .yearCombobox{
+     padding-left: 40px;
+     width: 160px;
+  
+ }
+ .heading{
+     font-size: 60px; 
+     font-family: emoji; 
+     margin-left:180px; 
+     padding-top:20px
+ }
+ .subheading{
+     font-size: 30px;  
+     margin-left:320px;
+ }
+ .discripation{
+     padding-left:250px;
+     padding-top:70px; 
+     font-size:20px; 
+     color:white;
+ }

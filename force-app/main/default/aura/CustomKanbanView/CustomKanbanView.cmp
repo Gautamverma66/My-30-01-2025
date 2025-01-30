@@ -1,0 +1,88 @@
+<aura:component controller="KanbanViewController" implements="force:appHostable" >
+    <aura:attribute name="objectList" type="List" />
+    <aura:attribute name="objectName" type="String" />
+    <aura:attribute name="pickListFieldList" type="List" />
+    <aura:attribute name="fieldName" type="String" />
+    <aura:attribute name="pickListvalue" type="List" />
+    <aura:attribute name="records" type="List" />
+    <aura:attribute name="recMap" type="Map" />
+    <aura:attribute name="isLoading" type="Boolean"  default="false"/>
+    <aura:attribute name="recordsShow" type="Boolean"  default="false"/>
+    <aura:attribute name="fieldListShow" type="Boolean"  default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.fetchObject}" />
+    <aura:if isTrue="{!v.isLoading}" >
+        <div class="slds-p-around_x-large">
+            <lightning:spinner alternative-text="Loading" size="large" variant="brand"></lightning:spinner>
+        </div>
+        </aura:if>
+    <lightning:select name="objects" label="Select Object :- " value="{!v.objectName}" onchange="{!c.fatchObjFields}">
+        <aura:iteration items="{!v.objectList}" var="obj">
+            <option text="{!obj.label}" value="{!obj.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    <aura:if isTrue="{!v.fieldListShow}">
+    <lightning:select name="fields" label="Group By :- " value="{!v.fieldName}" onchange="{!c.fetchPicklistValue}" >
+        <aura:iteration items="{!v.pickListFieldList}" var="field">
+            <option text="{!field.label}" value="{!field.value}"/>
+        </aura:iteration>
+    </lightning:select>
+    <br/>
+    <hr/>
+    </aura:if>
+    <aura:if isTrue="{!v.recordsShow}">
+    <div class="slds-grid " style="width: fit-content; ">
+        
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <div class="slds-path">
+                        <div class="slds-grid slds-path__track">
+                            <div class="slds-grid slds-path__scroller-container">
+                                <div class="slds-path__scroller">
+                                    <div class="slds-path__scroller_inner">
+                                        <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal" >
+                                            <aura:iteration items = "{!v.records}" var = "picValues">
+                                                
+                                                <li class="slds-path__item slds-is-current slds-is-active"  role="presentation" style="width:250px;" >
+                                                    <a aria-selected="true" class="slds-path__link" href="" >
+                                                        <span class="slds-path__title">{!picValues.key} ({!picValues.value.length})</span>
+                                                    </a>
+                                                </li> <br/>
+                                                
+                                            </aura:iteration>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+            </thead>
+            
+            
+            <div class="slds-grid" style="padding:0.5rem; background-color: white;">
+                <aura:iteration items="{!v.records}" var="valu">
+                    <div class="stageContainer"  style="width:250px;">
+                        <ul ondrop="{!c.drop}" ondragover="{!c.allowDrop}" class="slds-has-dividers_around-space dropZone" data-Pick-Val="{!valu.key}" style="height:70vh;overflow-y:auto; ">
+                            <aura:iteration var="objRecord" items="{!valu.value}">
+                                <li class="slds-item slds-m-around_small" draggable="true" ondragstart="{!c.drag}" id="{!objRecord.Id}"  >
+                                    <article class="slds-tile slds-tile_board">
+                                        <h3 class="slds-truncate" title="{!objRecord.Name}">
+                                            <a href="{!'/' + objRecord.Id}" target="_blank">{!objRecord.Name}</a>
+                                        </h3>
+                                        <div class="slds-tile__detail slds-text-body_small">
+                                            <p class="slds-text-heading_small">{!objRecord.CreatedDate}</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                    
+                </aura:iteration>
+            </div>
+        </table>
+    </div>
+</aura:if>
+</aura:component>

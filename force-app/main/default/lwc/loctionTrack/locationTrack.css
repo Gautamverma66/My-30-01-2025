@@ -1,0 +1,12 @@
+.AttendanceButtonPresent {
+    background-color: #957FEF;
+    color: white;
+    margin: 10px;
+    cursor: default;
+}
+.AttendanceButtonAbsent{
+    background-color: #475467;
+    color: white;
+    margin: 10px;
+    cursor: default;
+}

@@ -1,0 +1,152 @@
+<apex:page controller="CIF_Form_Controller" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <head>
+        <style  type="text/css">
+            @page{  
+                size: A4 ;
+                margin-top: 1.1cm;
+                margin-bottom: 1cm;
+                margin-left: 2.2cm;
+                margin-right: 2.2cm;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <apex:form >
+        <div class="Main" style="width:100%; background-color:rgb(173, 173, 173);text-align: -webkit-center;font-family: sans-serif;padding-top:10px;">
+            <div align="center" width="70%" style="width:70%; background-color:white;">
+                    <table   width="100%" >
+                        <tr>
+                            <td align="left" width="50%" style="padding-left:20px;" ><b style="color:skyblue">BRISKMINDS</b></td>
+                            <td align="right" width="50%" style="padding-right:20px" ><img style="height:80px; width:130px;" src="{!$Resource.BMLogo}" /></td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <p align="center"  ><b style="background-color:rgb(23, 12, 86); color:white;">Personal Information</b></p>
+                    <table align="center" width="97%">
+                        <tr>
+                            <th align="left" width="50%" ></th>
+                            <th align="right" width="50%" ></th>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>Form Number</b></td>
+                            <td align="right"><b>Date of Created</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left"><input id="theTextInput" type="text" style="border-color: rgb(230 194 96);" /></td>
+                            <td align="right"><input id="theTextInput1" type="text" style="border-color: rgb(230 194 96);" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>First Name</b></td>
+                            <td align="right"><b>Last Name</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left"><input id="theTextInput" type="text" style="border-color: rgb(230 194 96);" value="{!con.FirstName}" /></td>
+                            <td align="right"><input id="theTextInput1" type="text" style="border-color: rgb(230 194 96)coral;" value="{!con.LastName}" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>Mobile No</b></td>
+                            <td align="right"><b>Email Address</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left"><input id="theTextInput" type="phone" style="border-color: rgb(230 194 96);" value="{!con.Phone}"/></td>
+                            <td align="right"><input id="theTextInput1" type="email" style="border-color: rgb(230 194 96);"  value="{!con.Email}" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>Nationality</b></td>
+                            <td align="right"><b>Age</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <apex:selectRadio >
+                                    <apex:selectOption itemLabel="Indian" itemValue="Indian"/>
+                                    <apex:selectOption itemLabel="NRI" itemValue="NRI"/>       
+                                    <apex:selectOption itemLabel="Other" itemValue="Other"/>      
+                                </apex:selectRadio>     
+                            </td>
+                            <td align="right"><input id="theTextInput1" type="text" style="border-color: rgb(230 194 96);" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" colspan="2" ><b>Residential Address</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left" colspan="2"><input id="theTextInput" type="text" style="border-color: rgb(230 194 96);height:40px;width:100%" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>City</b></td>
+                            <td align="right"><b>PIN Code</b></td>
+                        </tr>
+                        
+                        <tr>
+                            <td align="left"><input id="theTextInput" type="text" style="border-color: rgb(230 194 96);" /></td>
+                            <td align="right"><input id="theTextInput1" type="number" style="border-color: rgb(230 194 96);" /></td>
+                        </tr>
+                    </table>
+                    <p align="center"  ><b style="background-color:rgb(23, 12, 86); color:white;">Employment Details</b></p>
+                    <table align="center" width="97%">
+                        <tr>
+                            <th align="left" width="50%" ></th>
+                            <th align="right" width="50%" ></th>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>Employment Type</b></td>
+                            <td align="right"><b>Date of Visit</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <apex:selectRadio >
+                                    <apex:selectOption itemLabel="Salaried" itemValue="Indian"/>
+                                    <apex:selectOption itemLabel="Business" itemValue="NRI"/>       
+                                    <apex:selectOption itemLabel="Retired" itemValue="Other"/>      
+                                </apex:selectRadio>     
+                            </td>
+                            <td align="right"><input id="theTextInput1" type="email" style="border-color: rgb(230 194 96);" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>Company Name</b></td>
+                            <td align="right"><b>Industry</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left"><input id="theTextInput" type="text" style="border-color: rgb(230 194 96);" /></td>
+                            <td align="right"><input id="theTextInput1" type="text" style="border-color: rgb(230 194 96);" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" colspan="2" ><b>Office Address</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left" colspan="2"><input id="theTextInput" type="text" style="border-color: rgb(230 194 96);height:40px;width:100%" /></td>
+                        </tr>
+                        <tr>
+                            <td align="left" ><b>City</b></td>
+                            <td align="right"><b>PIN Code</b></td>
+                        </tr>
+                        
+                        <tr>
+                            <td align="left"><input id="theTextInput" type="text" style="border-color: rgb(230 194 96);" /></td>
+                            <td align="right"><input id="theTextInput1" type="number" style="border-color: rgb(230 194 96);" /></td>
+                        </tr>
+                    </table>
+                    <p align="center"  ><b style="background-color:rgb(23, 12, 86); color:white;">Requirements </b></p>
+                    <table align="center" width="97%">
+                        <tr>
+                            <td align="left" ><b>construction Status</b></td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <apex:selectRadio >
+                                    <apex:selectOption itemLabel="Under Construction" itemValue="Under Construction"/>
+                                    <apex:selectOption itemLabel="Near Completion" itemValue="Near Completion"/>       
+                                    <apex:selectOption itemLabel="Ready To Move" itemValue="Ready To Move"/>      
+                                </apex:selectRadio>     
+                            </td>
+                        </tr>
+                    </table>
+                 
+                        <apex:commandButton action="{!save}" value="Save"/>
+                   
+            </div>
+        </div>
+    </apex:form>
+    </body>
+  
+</apex:page>

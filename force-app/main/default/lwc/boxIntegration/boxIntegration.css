@@ -1,0 +1,29 @@
+.NewFolder{
+    width: 300px;
+    display: inline-flex;
+    background-color: #f2f2f2;
+}
+.Tableouter{
+    height: 200px;
+    overflow: scroll;
+    background-color: #f2f2f2;
+}
+.UploadFile{
+    width: fit-content;
+    background-color: #f2f2f2;
+}
+.Icon{
+    width:50px;
+    padding-left:8px;
+}
+.Foldername{
+    padding-left: 20px;
+    width: 70%;
+}
+.DeleteButton{
+    width:5%; 
+    padding-right:80px;
+}
+.Datarow{
+    height: 50px;
+}

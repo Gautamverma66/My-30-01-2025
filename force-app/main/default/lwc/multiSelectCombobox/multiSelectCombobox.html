@@ -1,0 +1,21 @@
+<template>
+     
+     <lightning-card  variant="Narrow"  title="Multi Select Combobox" if:true={options}>
+        <div class="ToggleButton">
+            <lightning-input data-id="toggle1" type="toggle" label="Multi Select" onchange={changeToggle} unchecked message-toggle-active="" message-toggle-inactive="" ></lightning-input> <br/>
+        </div>
+        <div if:false={multiSelectShow}>
+            <div class="slds-p-horizontal_small"> 
+                <c-child-multi-select-combobox  options={options}  label="Single Select"></c-child-multi-select-combobox>
+            </div>
+        </div>
+        <div if:true={multiSelectShow}>
+            <div class="slds-p-horizontal_small"> 
+                <c-child-multi-select-combobox multi-select="true" options={options}  label="MultiSelect"></c-child-multi-select-combobox>
+            </div>
+        </div>
+        <br/>
+    </lightning-card>
+
+
+</template>

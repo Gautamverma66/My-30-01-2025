@@ -1,0 +1,168 @@
+<apex:component controller="ComponentController" allowDML="true" >
+    <apex:attribute name="object" description="Attribute on the component."  type="String" required="required" assignTo="{!objName}"/>
+    <apex:attribute name="field" description="Attribute on the component."  type="String[]" required="required" assignTo="{!selectfields}"/>
+    <apex:attribute name="fieldLabel" description="Attribute on the component."  type="String[]" required="required" assignTo="{!selectfieldsLabel}"/>
+
+    <apex:actionFunction name="callChild" action="{!records}" oncomplete="changeValue()" reRender="ab,cd"></apex:actionFunction>
+    <script type="text/javascript">
+        //for master checkbox maintain
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+        //for child checkbox maintain
+        function changeValue() {
+            var count=0;
+            var masterCheck = document.getElementsByClassName("master");
+            var  childCheck=document.getElementsByClassName("childs");       
+            for (var i=0;i<childCheck.length;i++) {
+                if(childCheck[i].checked == true) {
+                    count++;
+                }  
+            }
+            if(childCheck.length==0){
+                masterCheck[0].checked = false;
+            }
+            else if(count==childCheck.length){
+                masterCheck[0].checked = true;
+            }
+            else{
+                masterCheck[0].checked = false;
+            }
+        }  
+        //CSV file download code
+        function csvFileDownload(csvStr){
+            var count=0;
+            var  childCheck=document.getElementsByClassName("childs");
+            for (var i=0;i<childCheck.length;i++) {
+                if(childCheck[i].checked == true) {
+                    count++;
+                }  
+            }
+            if (count!=0) {
+                var parser = new DOMParser;
+                        var dom = parser.parseFromString(
+                            '<!doctype html><body>' + csvStr,
+                            'text/html');
+                        var decodedString = dom.body.textContent;
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(decodedString);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'CSVFile.csv';
+                hiddenElement.click();
+            }
+        }
+      
+    </script>  
+    <apex:pageBlock title="Records" id="ab" >
+        <!-- Spinner code -->
+        <style>
+            .spinnerBg{
+                width: 96%;height: 45%;position: absolute;background-color: #000;opacity: 0.2;z-index: 999999;
+            }
+            .spinner{
+                width: 96%;height: 45%;background-position:center ;z-index: 9999999;position: absolute;opacity: 1;background-image: url("/img/loading32.gif");background-size: 16px;background-repeat: no-repeat;background-attachment: fixed;
+            }
+        </style>
+        <apex:actionStatus id="pageStatus">
+            <apex:facet name="start">
+                <!-- This name determines where the content of the facet component is rendered -->
+                <div class="spinnerBg" />
+                  <!-- here class attribute is used to point to a class in a style sheet -->  
+                <div class="spinner" />
+            </apex:facet>
+        </apex:actionStatus>
+       
+        <apex:pageMessages />
+        
+        <table style="width:100%;"><tr>
+            <td>
+            <apex:commandButton value="Delete" action="{!deleteSelected}" status="pageStatus" reRender="ab" />&nbsp;
+            <apex:commandButton value="New Record" action="{!newRecordCreate}" onclick="target='_blank'"  status="pageStatus" />&nbsp;
+            <apex:commandButton value="Download CSV" status="pageStatus" action="{!csvFile}" oncomplete="csvFileDownload('{!csvString}')" reRender="ab"  />
+            </td>
+            <!-- Alphabet List -->
+            <td  style="width:40%;" align="right">
+                <apex:repeat value="{!alphaList}" var="nn">
+                    <td><apex:commandLink action="{!alphaDisplay}" oncomplete="changeValue()" reRender="ab"  status="pageStatus">
+                        <apex:param value="{!nn}" name="sss"  assignTo="{!searchVar}"/> {!nn} |</apex:commandLink></td>
+                </apex:repeat>
+            </td> </tr>       
+        </table> 
+        
+        <!-- Records Table -->
+        <div style="overflow: scroll; width:100%; height: 200px;">
+        <apex:pageBlockTable value="{!listWrapperPagination}" var="res" id="cd" >
+            <apex:column >
+                <apex:facet name="header">
+                        <apex:inputCheckbox styleClass="master" onclick="selectAllCheckboxes(this,'child')"  />
+                </apex:facet>
+                <apex:inputCheckbox styleClass="childs"  id="child" value="{!res.selectedCheckBox}"  onclick="changeValue()" />
+            </apex:column>
+            <apex:column headerValue="Action">
+                <apex:outputLink title=""  value="/{!res.obj.Id+'/e?retURL=%2F'+res.obj.Id}" target="_blank"  >Edit</apex:outputLink>&nbsp;|&nbsp;
+                <apex:commandLink value="Del" action="{!delLink}" reRender="ab" status="pageStatus">
+                    <apex:param name="accountid" value="{!res.obj.Id}" assignTo="{!selectedId}"/>
+                </apex:commandLink>
+            </apex:column>
+                <apex:repeat value="{!totalList}" var="fie"   >
+                    <apex:column rendered="{!IF(fie.Value=='name',false,true)}" value="{!res.obj[fie.value]}">
+                        <apex:facet name="header">
+                            <apex:commandLink value="{!fie.Label}{!IF(sortExpression==fie.Value,IF(sortDirection=='ASC','▲','▼'),'')}" oncomplete="changeValue()" action="{!columnSort}" status="pageStatus" reRender="ab">
+                                <apex:param name="clickToSort" value="{!fie.Value}" assignTo="{!sortExpression}"/>
+                            </apex:commandLink>
+                            
+                        </apex:facet>
+                    </apex:column>
+                    <!-- Name field Column clickable -->
+                    <apex:column rendered="{!IF(fie.Value=='name',true,false)}">
+                        
+                        <apex:facet name="header">
+                            <apex:commandLink value="{!fie.Label}{!IF(sortExpression==fie.Value,IF(sortDirection=='ASC','▲','▼'),'')}" oncomplete="changeValue()" action="{!columnSort}" status="pageStatus" reRender="ab">
+                                <apex:param name="clickToSort" value="{!fie.Value}" assignTo="{!sortExpression}"/>
+                            </apex:commandLink>
+                            
+                        </apex:facet>
+                        <apex:outputLink value="/{!res.obj.Id}"  target="_blank" >{!res.obj[fie.value]}</apex:outputLink>
+                         
+                    </apex:column>
+                
+              
+              
+            </apex:repeat>
+        </apex:pageBlockTable>
+        </div>
+
+
+        <table style="width: 100%"><tr>
+            <td>
+                Page: <apex:inputText value="{!page}" style="width:20px;" onkeydown="if(event.keyCode==13){this.blur();pageNumber();}" >
+                </apex:inputText>of {! CEILING(resultSize / PageSize) }
+                <apex:actionFunction name="pageNumber"  reRender="ab" status="pageStatus" action="{!pageNumberChange}" oncomplete="changeValue()"></apex:actionFunction>
+             
+            </td>
+            
+            <td align="right">
+                Records per page:
+        <apex:selectList value="{!pageSize}" size="1">
+            <apex:selectOption itemValue="5"  itemLabel="5"/>
+            <apex:selectOption itemValue="10" itemLabel="10"/>
+            <apex:selectOption itemValue="20" itemLabel="20"/>
+            <apex:actionSupport event="onchange" action="{!pageSizeChange}" status="pageStatus"  oncomplete="changeValue()" reRender="ab"/>
+        </apex:selectList>
+            </td>
+        </tr></table>  
+
+        <apex:pageBlockButtons location="Bottom" >
+            <apex:commandButton action="{!firstButton}" value="First" status="pageStatus" reRender="ab" oncomplete="changeValue()" disabled="{!!con.hasPrevious}" />
+            <apex:commandButton action="{!perviousButton}"   value="previous" status="pageStatus" oncomplete="changeValue()"  reRender="ab" disabled="{!!con.hasPrevious}" />
+            <apex:commandButton action="{!nextButton}"  value="Next"  status="pageStatus" oncomplete="changeValue()" reRender="ab"   disabled="{!!con.hasNext}"/>
+            <apex:commandButton action="{!lastButton}"  value="Last" status="pageStatus" reRender="ab" oncomplete="changeValue()" disabled="{!!con.hasNext}" />
+        </apex:pageBlockButtons>
+        
+    </apex:pageBlock>  
+</apex:component>

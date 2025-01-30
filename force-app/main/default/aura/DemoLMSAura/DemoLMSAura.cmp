@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute type="String" name="receivedMessage" />
+    
+    <lightning:messageChannel type="Demo__c" aura:id="myChannnel" onMessage="{!c.handleReceiveMessage}"
+        scope="APPLICATION" />
+
+    <lightning:card title="Aura Receive Message" iconName="custom:custom30">
+        <div class="slds-m-around_medium">
+            <br/><br/>
+            <p>Received Message :</p>
+            <div class="slds-box">
+                <lightning:formattedText value="{!v.receivedMessage}" />
+            </div>
+        </div>
+    </lightning:card>    
+</aura:component>

@@ -1,0 +1,20 @@
+<apex:page sidebar="false" showHeader="false" standardController="Merchandise__c" recordSetVar="Record">
+    
+    <apex:pageBlock title="Merchandise">
+        <apex:form >
+            <apex:dataList value="{!Record}" var="list">
+                <apex:commandLink rerender="detail">
+                    {!list.Name}
+                    <apex:param name="cid" value="{!list.id}"/>
+                </apex:commandLink>
+            </apex:dataList>
+        </apex:form>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Record Detil">
+        <apex:outputPanel id="detail">
+            <apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" />
+        </apex:outputPanel>
+    </apex:pageBlock>
+    
+</apex:page>

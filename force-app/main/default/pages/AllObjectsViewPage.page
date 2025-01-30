@@ -1,0 +1,6 @@
+<apex:page controller="ObjectsAndFields">
+    <apex:pageBlock >
+        
+    </apex:pageBlock>
+    
+</apex:page>

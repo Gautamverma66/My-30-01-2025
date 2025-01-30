@@ -1,0 +1,89 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="slds-p-around_x-large">
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+    <lightning-breadcrumbs>
+        <template for:each={breadcrumbList} for:item="crumbs" for:index="ind">
+            <lightning-breadcrumb
+                key={crumbs.key}
+                label={crumbs.value}
+                name={crumbs.value}
+                data-index={ind}
+                data-id={crumbs.key}
+                onclick={handlebreadcrumb}
+            >
+            </lightning-breadcrumb>
+        </template>
+    </lightning-breadcrumbs>
+    <br/>
+    <form class="NewFolder">
+        <lightning-input type="text" data-id="NewFolder" label="Folder Name" placeholder="type here..." style="width: 120px;  padding-left:10px; padding-bottom:5px; "></lightning-input>
+        <lightning-button variant="brand" label="Create Folder" title="Create Folder" onclick={newFolderCreate} class="slds-m-around_large" ></lightning-button>
+    </form><br/><br/>
+
+    <div class="Tableouter">
+        <table class="Tableinner">
+            <thead>
+                <tr>
+                    
+                    <th class="Icon"></th>
+                    <th class="Foldername">Folder Name</th>
+                    <th class="DeleteButton">Delete</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+           
+                <template for:each={allFolder} for:item="file" for:index="ind" >
+                    <tr class="Datarow"  key={file.id} >
+                        <td  class="Icon"><lightning-icon icon-name='doctype:folder' alternative-text='folder' size='small' title='folder'></lightning-icon></td>
+                        <td class="Foldername"> <a   id={file.id} data-id={file.id} data-doctype={file.type} data-name={file.name} onclick={viewFile}>{file.name}</a></td>
+                        <td class="DeleteButton"> <a  data-id={file.id} data-type={file.type} size='small' data-index={ind} onclick={delFile} >
+                            <lightning-icon icon-name='action:delete' size='small' alternative-text='delete file' title='del'></lightning-icon></a></td>
+                            <td></td>
+                    </tr>
+
+                </template>
+            
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <div class="Tableouter">
+        <table class="Tableinner">
+            <thead>
+                <tr >
+                    
+                    <th  class="Icon"></th>
+                    <th class="Foldername">File Name</th>
+                    <th class="DeleteButton">Delete</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+         
+                <template for:each={allFiles} for:item="file" for:index="ind" >
+                    <tr class="Datarow" key={file.id} >
+                        <td class="Icon"><lightning-icon icon-name='standard:file' alternative-text='file' size='small' title='file'></lightning-icon></td>
+                        <td class="Foldername"> <a id={file.id} data-id={file.id} data-doctype={file.type} data-name={file.name} onclick={viewFileLink}>{file.name}</a></td>
+                        <td class="DeleteButton"> <a  data-id={file.id} data-type={file.type}  data-index={ind} onclick={delFile} >
+                            <lightning-icon icon-name='action:delete' size='small' alternative-text='delete file' title='del'></lightning-icon></a></td>
+                            <td><a onclick={downloadFile}  data-id={file.id} >
+                                <lightning-icon icon-name='action:download' size='small'  alternative-text='download file' title='download' ></lightning-icon>
+                                </a></td>
+                    </tr>
+
+                </template>
+            
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <div class="UploadFile">
+    <lightning-input type="file" label="Upload File" onchange={handleFileChange} ></lightning-input>
+    
+    <lightning-button label="Upload" onclick={fileUpload} disabled={uploadButton} ></lightning-button>
+    </div>
+   </template>

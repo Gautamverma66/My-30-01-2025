@@ -1,0 +1,12 @@
+<apex:page controller="MerchandiseRecords">
+    <apex:pageBlock title="Merchandise">
+        <apex:pageBlockSection title="Merchandise records">
+        <apex:pageBlockTable value="{!lt}" var="re">
+            <apex:column value="{!re.Name__c}"/>
+            <apex:column value="{!re.Job_Description__c}"/>
+            <apex:column value="{!re.Price__c}" />
+            <apex:column value="{!re.Total_Inventory__c}" />
+        </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

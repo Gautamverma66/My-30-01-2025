@@ -1,0 +1,40 @@
+<aura:component controller="ServerSidePaginationControllerClass" implements="force:appHostable" >
+    <aura:attribute name="childPageShow" type="boolean" />
+    <aura:attribute name="fieldBlockShow" type="boolean" />
+    <aura:attribute name="objectList" type="List" />
+    <aura:attribute name="selectedObj" type="String" /> 
+    <aura:attribute name="fields" type="List" />
+    <aura:attribute name="selectedField" type="List" />
+    <aura:attribute name="isLoading" type="Boolean"  default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.fatchObj}" />
+    <aura:if isTrue="{!v.isLoading}" >
+    <div class="slds-p-around_x-large">
+        <lightning:spinner alternative-text="Loading" size="large" variant="brand"></lightning:spinner>
+    </div>
+    </aura:if>
+    <div class="slds-container_small">
+        <lightning:select name="object" label="Select Object:" value="{!v.selectedObj}"
+            onchange="{!c.fatchObjFields}">
+            <aura:iteration items="{!v.objectList}" var="obj">
+                <option text="{!obj.label}" value="{!obj.value}" />
+            </aura:iteration>
+        </lightning:select>
+    </div>
+    <hr />
+    <aura:if isTrue="{!v.fieldBlockShow}">
+        <div class="slds-container_medium">
+            <lightning:dualListbox name="Objectfields" label="Fields" sourceLabel="Available" selectedLabel="Selected"
+                 options="{!v.fields}" value="{!v.selectedField}" />
+        </div>
+        <br />
+        <br />
+        <lightning:button variant="brand" label="Process"  onclick="{!c.showData}" />
+        <br />
+        <br />
+    </aura:if>
+    <aura:if isTrue="{!v.childPageShow}">
+        <c:ChildCompServerSidePagination aura:id="childComponent" selectobjectname="{!v.selectedObj}"
+            selectList="{!v.selectedField}" allFields="{!v.fields}" />
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,18 @@
+<aura:component controller="GoogleIntegration" implements="forceCommunity:availableForAllPageTypes"  >
+    <aura:attribute name="userName" type="String" />
+    <aura:attribute name="userEmail" type="String" />
+    <aura:attribute name="userPic" type="String" />
+    <aura:attribute name="backPic" type="String" default="{!$Resource.IntegrationHomePage}" />
+    <aura:handler name="init" value="{!this}" action="{!c.userDetails}" />
+	<div  class="slds-box" style="{!'position: relative; background:white url(' + v.backPic +') 
+    no-repeat;background-position: center;background-size: cover; height:650px; display:flex;'}">
+        <div style="background-color:white;height:200px;width:200px;border-radius:50%;margin-top:220px;margin-left:620px;">
+            <img style="border-radius:50%;border-color:black;border-inline-end-color: black; "  src="{!v.userPic}" alt="LogoImg"></img>
+        </div>
+    
+        <div style="height:200px;width:300px;margin-top:270px;margin-left:200px;  ">
+            <h1 style="color: aliceblue;display: inline;  ">Contact Name :-  </h1> <h1 style="color: aliceblue; display: inline;">{!v.userName}</h1 ><br/><br/><br/>
+        	<h1 style="color: aliceblue; display: inline; ">User Id :-  </h1><h1 style="color: aliceblue; display: inline; ">{!v.userEmail}</h1>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,87 @@
+<apex:page controller="ObjectsController1" showHeader="false"> 
+    <script>
+        function callChild() {
+            
+        }
+    </script>
+    <apex:form id="one">
+        <apex:pageBlock >
+            <!-- Spinner code -->
+            <style>
+                .spinnerBg{
+                    width: 95%;height: 95%;position: absolute;background-color: #000;opacity: 0.2;z-index: 999999;
+                }
+                .spinner{
+                    width: 95%;height: 95%;background-position: center;z-index: 9999999;position: absolute;opacity: 1;background-image: url("/img/loading32.gif");background-size: 16px;background-repeat: no-repeat;background-attachment: fixed;
+                }
+            </style>
+            <apex:actionStatus id="pageStatus">
+                <apex:facet name="start">
+                    <!-- This name determines where the content of the facet component is rendered -->
+                    <div class="spinnerBg" />
+                      <!-- here class attribute is used to point to a class in a style sheet -->  
+                    <div class="spinner" />
+                </apex:facet>
+            </apex:actionStatus>
+            <!-- objects list -->
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Objects :-" style="font-size: large" />
+                    <apex:selectList size="1" value="{!selectObject}">
+                        <apex:selectOptions value="{!options}" />
+                        <apex:actionSupport event="onchange" status="pageStatus" action="{!objFields}" reRender="one" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:commandButton value="Reset" disabled="{!resetButt}" action="{!resetButton}" status="pageStatus" reRender="one" />
+            </apex:pageBlockSection>
+
+            <!-- Fields panel -->
+            <apex:pageBlock rendered="{!fieldPanel}">
+                <apex:pageBlockSection >
+                    <apex:pageBlockSectionItem >
+                        <apex:panelGrid columns="3">
+                            <apex:panelGroup style="width:40%">
+                                <div>
+                                    <h1 style="font-size: large">{!objNameShow} Fields:</h1>
+                                </div>
+                                <apex:selectList size="10" value="{!selectedList}" multiselect="true" style="width:250px; hight:250px;" >
+                                    <apex:selectOptions value="{!fields1}" />
+                                </apex:selectList>
+                            </apex:panelGroup>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            <apex:panelGroup style="width:20%">
+                              <br/> <br/> <br/> <apex:commandButton value="Add" disabled="{!addbuttonDis}" status="pageStatus" action="{!addButton}" reRender="one" style="width: 100%"
+                                />
+                                <br />
+                                <br/><br/>
+                                <apex:commandButton value="Remove" disabled="{!removebuttonDis}" status="pageStatus" action="{!removeButton}" reRender="one" style="width: 100%"
+                                />
+                                <br />
+                            </apex:panelGroup>
+                        </apex:panelGrid>
+                        <apex:panelGroup style="width: 40%">
+                            <div>
+                                <h1 style="font-size: large">Selected Fields:</h1>
+                            </div>
+                            <apex:selectList size="10" value="{!reSelectedList}" multiselect="true" style="width:250px; hight:350px;">
+                                <apex:selectOptions value="{!selectedFieldList}" />
+                            </apex:selectList>
+                        </apex:panelGroup>
+
+                    </apex:pageBlockSectionItem>
+                    &nbsp;
+                    <apex:commandButton value="Process" status="pageStatus" action="{!processButton}"  oncomplete="callChild()"  reRender="one" rendered="{!processButtonDis}"/>
+
+
+
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:pageBlock>
+        <!-- Component page -->
+        <c:displayRecords object="{!selectObject}"  id="td" field="{!fieldQuery}" fieldLabel="{!fieldQueryLabel}" rendered="{!compPageRe}" />
+    </apex:form>
+  
+    
+</apex:page>

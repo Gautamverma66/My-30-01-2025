@@ -1,0 +1,639 @@
+<apex:page renderAs="pdf" applyHtmlTag="false" showHeader="false" applyBodyTag="false" >
+    <head>
+        <style type="text/css">
+        @page{
+            size: A4;
+            margin-left: 2cm;
+            margin-bottom: 2cm;
+            margin-top: 2cm;
+            margin-right: 2cm;
+            @bottom-right{
+                content: 'Page 'counter(page)' of 'counter(pages);
+            }    
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div style="padding-top:700px;">
+            <p align="center"><b><u>SALE DEED</u></b></p>
+            <p align="justify"><b>Sale Deed</b> of Flat No. ____ in Block no. __ on ___ <b>Floor</b>, in the Scheme known as "________", having super built up area of _____<b>Sq.Mtrs</b> equivalent to _____ <b>Sq. Ft.</b>, Carpet Area as per RERA of ______ Sq. Mtrs, equivalent to  ______ Sq. Ft. in NA land bearing Block No. ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬-______________________, Moje Khodiyar, Taluka Ghatlodia, in the Registration District of Ahmedabad, and Registration Sub District at Ahmedabad – 8 [Sola],for total consideration of <b>Rs.</b> _________________/-</p>
+            <p align="justify">====================================================================================</p>
+            <p style="page-break-before: always"></p>
+            <p align="center" style="padding-top:400px;"><b><u>CONVEYANCE DEED</u></b></p>
+            <p align="justify"><b>THIS CONVEYANCE DEED (“Deed”)</b> is entered into at Ahmedabad on this ______ day of _______________, 20___:</p>
+            <p align="center"><b><u>BY AND BETWEEN</u></b></p>
+            <p><b>ADANI ESTATE MANAGEMENT PRIVATE LIMITED (AEMPL)   (Earlier known as SHANTIGRAM ESTATE MANAGEMENT PRIVATE LIMITED)</b>, PAN: AAFCA6866L, a company originally incorporated with the name ADANI REALTY (AHMEDABAD) PRIVATE LIMITED under the Companies Act, 1956, having CIN No U45200GJ2005PTC047086 having its registered office at "Adani House", Near Mithakhali Six Roads, Navrangpura, Ahmedabad - 380 009, Gujarat, India, for the sake of brevities, hereinafter referred to as the “Promoter” (which expression shall unless it be repugnant to the context or meaning thereof be deemed to include its successors in interest and permitted assigns) of the ONE PART; </p>
+            <p align="center"><b>AND</b></p>
+            <p>1. (First Applicant)______________________________________________</p>
+            <p>PAN: ___________________________, Aged Adult, residing at</p>
+            <p> ________________________________________________________________</p>
+            <p>2. (Second Applicant)____________________________________________</p>
+            <p>PAN: ___________________________, Aged Adult, residing at</p>
+            <p> ________________________________________________________________</p>
+            <p align="justify">Hereinafter referred to as the <b>“Allottee”</b> (which expression shall, unless it be repugnant to the context or meaning thereof, be deemed to mean and include, in the case of a/an: (i) individual or individuals, his, her or their respective heirs, legal representatives, executors, administrators, successors and permitted assigns, (ii) company, corporation, or limited liability partnership, its successors and permitted assigns, the partners  from  time  to  time  of  the  firm  and  the  heirs,  legal  representatives, executors and administrators, of its last surviving partner (iii) partnership firm, the partners  from  time  to  time  of  the  firm  and  the  heirs,  legal  representatives, executors and administrators, of its last  surviving partner its or their successors and permitted assigns, (iv) Hindu undivided family, the Karta and manager and the coparceners from time to time thereof and the survivors or survivor of them and the heirs, legal representatives, executors and administrators, of the last survivor of them, its or their successors and permitted assigns and (v) trust, the trustees for the time being and from time to time of the trust and the survivors or survivor of them and its/their successors and permitted assigns) of the <b>OTHER PART.</b></p>
+            <p align="justify">The Promoter and the Allottee, are hereinafter collectively referred to as <b>“the Parties”</b> and individually as a <b>“Party”</b>.</p>
+            <p><b>WHEREAS:</b></p>
+            <table>
+                <tr>
+                    <td width="7%" valign="top"><p><b>A.</b></p></td>
+                    <td width="93%"><p align="justify">The Promoter is engaged in the business of real estate development;</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>B.</b></p></td>
+                    <td ><p align="justify">The Promoter, along with its associates, is developing an integrated township on the lands of four said Units viz. Khodiyar, Jaspur, Dantali and Khoraj, falling within the limits of Ahmedabad and Gandhinagar Districts (“<b>Township  Land</b>”) in a phased manner consisting of residential, commercial spaces and public infrastructure as per provisions of the Regulations for Residential Townships 2009 (“<b>Township Policy</b>”) as amended from time to time;</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>C.</b></p></td>
+                    <td ><p align="justify">The Promoter had applied to the concerned authority for development of a township named “Adani Shantigram” on the Township Land (“<b>Shantigram Township</b>”) under the township policy of the Government of Gujarat including the Regulations for Residential Townships 2009 (“<b>Township Policy</b>”) as amended from time to time. The Promoter is granted an in-principle approval dated 28.6.2010 by the Urban Development and Urban Housing Department, Sachivalaya, Gandhinagar for the development of the Shantigram Township under the Township Policy and the applicable laws and necessary plans for said “<b>Shantigram Township</b>” has been sanctioned by Ahmedabad Urban Development Authority (AUDA) vide its order dated 24-12-2010.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>D.</b></p></td>
+                    <td ><p align="justify">By virtue of several sale deeds, as detailed in the below table, the Promoter became the absolute and unequivocal owner and possessor of and is sufficiently entitled to all those pieces and parcels of the non-agricultural lands bearing Block No. 318, 319, 327 and 328 of Moje Khodiyar, Taluka Daskroi and in the Registration District of Ahmedabad_and Registration Sub District of Ahmedabad – 8 [sola] (“<b>Larger Land</b>”) which is within the Shantigram Township;</p>
+                        <p style="page-break-before: always"></p>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="1">
+                            <tr>
+                                <th align="center" style="background-color:rgb(90, 160, 225);"><b>Sr NO.</b></th>
+                                <th align="center" style="background-color:rgb(90, 160, 225) ;"><b>Village</b></th>
+                                <th align="center" style="background-color:rgb(90, 160, 225) ;"><b>Block No.</b></th>
+                                <th align="center" style="background-color:rgb(90, 160, 225) ;"><b>Sale deed Registration No.</b></th>
+                                <th align="center" style="background-color:rgb(90, 160, 225) ;"><b>Sale deed Date</b></th>
+                            </tr>
+                            <tr>
+                                <td align="center">1</td>
+                                <td align="center">Khodiyar</td>
+                                <td align="center">318</td>
+                                <td align="center">1100</td>
+                                <td align="center">03-02-2016</td>
+
+                            </tr>
+                            <tr>
+                                <td align="center">2</td>
+                                <td align="center">Khodiyar</td>
+                                <td align="center">319</td>
+                                <td align="center">7344</td>
+                                <td align="center">04-09-2013</td>
+                                
+                            </tr>
+                            <tr>
+                                <td align="center">3</td>
+                                <td align="center">Khodiyar</td>
+                                <td align="center">327</td>
+                                <td align="center">16446</td>
+                                <td align="center">11-09-2009</td>
+                                
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td align="center">Khodiyar</td>
+                                <td align="center">328</td>
+                                <td align="center">16446</td>
+                                <td align="center">11-09-2009</td>
+                                
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>E.</b></p></td>
+                    <td ><p align="justify">The District Collector, Ahmedabad passed various orders vide which non-agricultural permissions for residential purpose, subject to conditions stated therein, were granted with respect to the said Larger Land being: (1) Block No. 318 admeasuring about 33755 sq.mtrs vide an Order bearing no. CB/ADM/T.N.A./TATKAL/SEC-65/S.R.-412/2015 dated 28-01-2016 (2) Block No. 319 admeasuring about 39619 sq.mtrs vide an Order bearing no. ETS/N.A./T.N.A./TATKAL-65/SR-182/2013 dated 06-08-2013 (3) Block No. 327 admeasuring about 22157 sq.mtrs vide an Order bearing no. ACB/TNC-3/TATKAL N.A./KHODIYAR/S.R.-01/17 dated 09-06-2017 and (4) Block No. 328 admeasuring about 17908 sq.mtrs. vide an order bearing no. ACB/TNC-3/TATKAL N.A./KHODIYAR/S.R.-01/17 dated 09-06-2017.</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>F.</b></p></td>
+                    <td ><p align="justify">That the Promoter is developing a residential Project under the name ‘<b>AMOGHA</b>’ (“<b>Project</b>”) on land aggregately admeasuring 13864.85 sq mts, comprising of (1) part of Block No 318 admeasuring about 3469.23 sq.mtrs (2) part of Block No 319 admeasuring about 1133.91 sq.mtrs (3) part of Block No. 327 admeasuring about 8181.54 sq.mtrs (4) part of Block No. 328 admeasuring about 1080.17 sq.mtrs (“<b>Project Land</b>”) forming part of said Larger Land within the Shantigram Township and more particularly described in <b>PART A</b> of schedule written hereunder and marked as <b>First Schedule</b>. The Project consists of residential Units as described in TABLE below: </p>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="1">
+                            <tr>
+                                <th align="center" ><b>Tower/Block No. </b></th>
+                                <th align="center" ><b>Block No. As Per Sanctioned Plans </b></th>
+                                <th align="center" ><b>No. of Floors</b></th>
+                                <th align="center" ><b>No of Units in Block</b></th>
+
+                            </tr>
+                            <tr>
+                                <td align="center">A</td>
+                                <td align="center">A</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center">B</td>
+                                <td align="center">B</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center">C</td>
+                                <td align="center">C</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center">D</td>
+                                <td align="center">D</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center">E</td>
+                                <td align="center">E</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center">F</td>
+                                <td align="center">F</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center">G</td>
+                                <td align="center">G</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center">H</td>
+                                <td align="center">H</td>
+                                <td align="center">14</td>
+                                <td align="center">56</td>
+                            </tr>
+                            <tr>
+                                <td align="center"></td>
+                                <td align="center">TOTAL</td>
+                                <td align="center"></td>
+                                <td align="center">448</td>
+                            </tr>
+                          
+
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>G.</b></p></td>
+                    <td ><p align="justify">The Promoter has developed 8 residential towers on the Project Land and the Project is comprising of total 448 nos. of residential units along with basement and hollow plinth parking and Common Areas and Facilities.</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>H.</b></p></td>
+                    <td ><p align="justify">Ahmedabad Urban Development Authority (“<b>AUDA</b>”), had granted permission for carrying out development of the Project, and in furtherance of the same, had granted relevant sanctions including the lay out and building plans, elevations etc. on the said Project Land, duly approved by AUDA Vide Development Permission No. PRM / 106 / 8 / 2020 / 438 dated 29/12/2020.  A copy of the same is annexed herewith and marked as <b>Annexure A</b>.  </p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>I.</b></p></td>
+                    <td ><p align="justify">That under Rule 29 of Companies (Incorporation) Rules, 2014, the name of said SHANTIGRAM ESTATE MANAGEMENT PRIVATE LIMITED was changed to ADANI ESTATE MANAGEMENT PRIVATE LIMITED on 07-11-2019 and Certificate to that effect was issued by Deputy ROC, Registrar of Company, ROC Ahmedabad on the same date.</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>J.</b></p></td>
+                    <td ><p align="justify">The Promoter has registered the Project under the provisions of RERA with the Real Estate Regulatory Authority at Ahmedabad (“<b>Authority</b>”) and the said Authority has issued a Registration Certificate of Project dated 05.02.2021 bearing reference no. PR/GJ/AHMEDABAD/DASKROI/AUDA/RAA08011/050221.  A copy of the said Registration Certificate is annexed herewith at <b>Annexure B</b>.</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>K.</b></p></td>
+                    <td ><p align="justify">The Allottee had approached the Promoter to purchase a residential unit in the Project and on discussions and negotiations with the Promoter, the Allottee had agreed to purchase unit being Unit No. _________, admeasuring about ___________   sq.mtrs / ___________ sq.ft Carpet Area as per RERA and exclusive balcony having approximate area of ___________   sq.mtrs / ___________ sq.ft and exclusive wash area of ___________   sq.mtrs / ___________ sq.ft, situated on ____ Floor of Tower ___ (“<b>Unit</b>”), more particularly described in the schedule annexed herewith and marked as <b>Second Schedule</b>, together with the proportionate undivided share admeasuring about ________ sq.mtrs in the Project Land and the proportionate right to use Common Areas and Facilities appurtenant to the premises as are described in the AFS (defined hereinafter) and more particularly described in schedule attached herewith and marked as <b>Third Schedule</b>. </p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>L.</b></p></td>
+                    <td ><p align="justify">In furtherance to the aforesaid, the Allottee and the Promoter have executed an Agreement For Sale dated ________, duly registered before the sub-registrar at Ahmedabad – 8 [Sola],  bearing registration number _______ dated _______ (“<b>AFS</b>”), wherein inter alia the terms of sale and purchase of the said Unit, terms for the purposes of use, possession and occupying the said Apartment etc. are stipulated.</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>M.</b></p></td>
+                    <td ><p align="justify">Building Use Permission for use of the residential units in the building where the  said Unit is situated is granted by Ahmedabad Urban Development Authority vide its order bearing No ___________________ dated _____________. </p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>N.</b></p></td>
+                    <td ><p align="justify">N.	The Promoter has already furnished a copy of all the requisite documents including, but not limited to, the following to the Allottee, which the Allottee had read and verified such documents and shall not raise any dispute / objection / question in respect of the same:</p>
+                        <ol>
+                            <li><p align="justify">Title documents including the title certificate issued by the legal advisors of the Project, relating to the Project Land;</p></li>
+                            <li><p align="justify">Sanctioned plans and development permission issued by the concerned authority;</p></li>
+                            <li><p align="justify">N. A. permission in relation to the said Project Land;</p></li>
+                            <li><p align="justify">Project specifications and related details; </p></li>
+                            <li><p align="justify">Building Use Permission; and </p></li>
+                            <li><p align="justify">such other requisite documents.</p></li>
+                        </ol>
+                        <p align="justify">The Allottee has himself / herself / itself and / or through its advocates/consultants verified all details and documents and the Allottee is fully satisfied about the right, title and interest of the Promoter with respect to Project Land on which the said Project is developed, regarding all the permissions obtained by the Promoter and development of the Project in general and in future the Allottee shall not raise any dispute, objection in respect of the same. The Allottee has also verified the documents filed/uploaded by the Promoter with the RERA Authority and is agreeable and satisfied with the same.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>O.</b></p></td>
+                    <td ><p align="justify">The Promoter has formed the Society (as defined in the AFS) as “___________” hereinafter referred to as “said Society”, under  the provisions of the ___________, bearing Registration No. _________. </p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>P.</b></p></td>
+                    <td ><p align="justify">In furtherance to the terms of the AFS, the Allottee has made payment of the consideration towards purchase of the said Unit (being Basic Consideration as defined in AFS) being Rs.____________/- (“<b>Sale Consideration</b>”) as detailed in schedule hereunder written and marked as <b>Fourth Schedule</b>. The Sale Consideration mentioned hereinabove is inclusive of the price for the appurtenant areas of the said Unit meant for exclusive use of the Allottee and the price for the proportionate undivided share in the Project Land. The Sale Consideration is also inclusive of proportionate price for right to use the Common Areas and Facilities of the said Project subject to the terms of the AFS.</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>Q.</b></p></td>
+                    <td ><p align="justify">In view of the aforesaid, the Parties are now desirous to execute this Deed recording conveyance of the said Unit from the Promoter to the Allottee. </p></td>
+                </tr>
+            </table>
+            <p><b>NOW THIS DEED WITNESSETH THAT:</b></p>
+            <table width="100%">
+                <tr>
+                    <td width="7%" valign="top"><p><b>1.</b></p></td>
+                    <td widht="93%"><p align="justify">In consideration of the payment of the Sale Consideration by the Allottee to the Promoter, receipt of which is acknowledged by the Promoter, the Promoter doth hereby <b>convey, grant, transfer and assure</b> unto the Allottee the said Unit, being Unit No. _______ admeasuring about ___________   sq.mtrs / ___________ sq.ft Carpet Area as per RERA and exclusive  balcony having approximate area of ___________   sq.mtrs / ___________ sq.ft. and exclusive wash area of ___________   sq.mtrs / ___________ sq.ft. situated on ____th Floor of Tower _____ thereon (shown in floor plan annexed herewith and marked as <b>Annexure C</b> highlighted with red color boundary) together with the proportionate undivided share admeasuring about _____ sq.mtrs in the Project Land situate lying and being at Moje Khodiyar, Taluka- Daskroi, in the Registration District of Ahmedabad, Sub-District Registration at Ahmedabad – 8 [sola], more particularly described in the Second Schedule hereunder written, along with the proportionate right to use Common Areas and Facilities, more particularly described in the Third Schedule hereunder written and <b>to have and to hold</b> the said Unit hereby, granted, conveyed and assured or intended or ex-pressed so to be with their and every of their rights, title, interest, easement and appurtenances unto and <b>to the use and benefit</b> of the Allottee/s forever as full owner and as member of the Society and subject to the rules, regulations and resolutions of the Society and also subject to the terms, conditions, limitations and restrictions stated hereunder in this Deed and other agreements with respect to the said Unit including the AFS.</p></td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>2.</b></p></td>
+                    <td><p align="justify"><b>Representations, Warranties and Covenants of the Allottee</b></p>
+                        <p  align="justify">The Allottee doth hereby represents, warrants, covenants and undertakes as under: </p>
+                        <table width="100%">
+                            <tr>
+                                <td width="7%" valign="top"><p>a)</p></td>
+                                <td width="93%"><p align="justify">Quiet, vacant and peaceful possession of the said Unit is delivered by the Promoter herein to the Allottee and the Allottee acknowledges such delivery and possession of the said Unit by the Promoter in good and proper condition. The Allottee has verified and is satisfied with the quality of construction, specifications, fixtures fittings, common areas and amenities, and project facilities, etc. and he/she/it shall not raise any objections/claims in this respect in future. The Allottee has also verified the physical condition of the said Unit and is satisfied with the same. The Allottee have completely satisfied itself / himself / herself with regards to the measurement of carpet area of the said Unit and its construction and development and has no objections in this regard and shall not raise any dispute in future.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>b)</p></td>
+                                <td><p align="justify">The Allottee/s agree that though he/she/they has/have become free, independent and absolute owner/s of the said Unit, however the same shall be used, occupied and transferred by the Allottee/s as per rules and regulations that shall be framed by the Society. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>c)</p></td>
+                                <td><p align="justify">The Allottee/s shall observe and perform all the rules and regulations which the Society may adopt at its inception and the additions, alterations or amendments thereof that may be made from time to time for protection and maintenance of the Project and the Unit therein and for the observance and performance of the Project rules, regulations and bye-laws for the time being of the concerned local authority and of Government and other public bodies. The Allottee shall also observe and perform all the stipulations and conditions laid down by the Society regarding the occupancy and use of the said Unit and shall pay and contribute regularly and punctually towards the taxes, expenses or other outgoings towards / related to the same. The Allottee shall also observe and perform all the stipulations and conditions laid down by the Promoter/ Society/ Township O &amp; M Agency regarding the occupancy and use of the said Unit and shall pay and contribute regularly and punctually towards the taxes, expenses or other out-goings in accordance with the terms of this Deed and AFS.</p></td>
+                            </tr>
+                            <tr style="page-break-before: always"></tr>
+                            <tr>
+                                <td valign="top"><p>d)</p></td>
+                                <td><p align="justify">All the common amenities and facilities in the Shantigram Township shall be shared and used by all owners/occupiers of all units in various projects of Shantigram Township.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>e)</p></td>
+                                <td><p align="justify">The Allottee may at all time hereafter peaceably and quietly enter upon, have, occupy, possess and enjoy the said Unit and receive the rents and profits thereof and of every part there to and for his/its/her use and benefit without any suit, eviction, interruption, claim or demand whatsoever from or by them the Promoter or any members or any of them or claiming by, from, under or in trust for him or any of them upon fulfillment of and subject to what is stated herein.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>f)</p></td>
+                                <td><p align="justify">The Allottee accepts, confirms and records that the Allottee has been given all the necessary and relevant documents, details, particulars and the like, as are specified under RERA, and the Allottee is satisfied with the same. The Allottee further agrees and confirms that the Promoter, to the satisfaction of Allottee, has undertaken all the functions, duties and obligations in accordance with applicable law and also in accordance with the provisions of the AFS including the Fittings and Fixtures &amp; Specifications as provided by the Promoter in accordance with the list and details annexed herewith and marked as <b>Annexure D</b>, and the Allottee has no complaint or grievance or objection of any nature whatsoever in respect of the same. The Allottee hereby waives, releases and discharges the Promoter from all the obligations, duties and functions any and all on its part to be observed and performed generally, including but not limited to the AFS.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>g)</p></td>
+                                <td><p align="justify">The Allottee agrees that the Promoter herein ADANI ESTATE MANAGEMENT PRIVATE LIMITED is a private limited company incorporated under the Companies Act, 1956. In future if the said Promoter company is merged/amalgamated with another company or demerged as per the provision of the companies Act 1956 or the Companies Act. 2013 as the case may be or is converted into Limited Liability Partnership firm, than such  /demerger/conversion shall not affect the rights and liabilities of the Promoter or the Allottee/s herein under this Deed and the Parties shall be bound by the terms and conditions mentioned herein.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>h)</p></td>
+                                <td><p align="justify">The Allottee hereby declares that the Allottee is legally entitled to purchase the said Unit in accordance with the prevailing laws and have taken all necessary permissions required for the purchase of the said Unit and have paid the consideration for the said Unit in accordance with applicable law and term of the AFS. If, the Allottee breaches any law or rules or if any fine or penalty or punishment is imposed by any authority for the same on it, then the same shall be the sole liability of the Allottee alone and the Allottee hereby completely agrees to indemnify and keep indemnified the Promoter in this regards for all times to come.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>i)</p></td>
+                                <td><p align="justify">The Allottee shall not use the said Unit or permit the same to be used (i) in a manner which may or is likely to cause nuisance or annoyance to the occupiers of the other units in the Project or to the owners or occupiers of the neighboring properties, (ii) for any immoral or illegal purposes. The Allottee agrees not to obstruct the common areas of the Project and / or the Shantigram Township in any manner, including by erecting any kind of temporary or permanent structure. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>j)</p></td>
+                                <td><p align="justify">The Allottee shall not throw dirt, rubbish, garbage, trash or permit the same to be thrown out from its Unit in the common areas, passages, compound or any portion of the said Project and / or the Shantigram Township. The Allottee shall maintain the general aesthetics and overall cleanliness of the Project and / or the Shantigram Township. If the Allottee or its employees, agents, visitors or the like are found throwing dirt, rubbish, garbage, pan-masala or the like in any part of the Project and / or Shantigram Township then the Allottee shall be liable to clear such dirt, rubbish, garbage or the like at its cost in addition to any fine that maybe imposed by the Promoter/Society on the Allottee.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>k)</p></td>
+                                <td><p align="justify">The Allottee/s irrevocably agrees that, the Promoter has provided dedicated vehicle (car or two wheeler) parking spaces in the basement, hollow plinth of the Project as per the provisions of the prevalent General Development Control Regulations. The parking of respective vehicles in respective parking spaces shall be at Allottee/s’ sole liability and responsibility and the Promoter/Society and maintenance staff shall not be held liable for any theft/damage of vehicles or goods kept therein and the Allottee/s shall be responsible to take their own insurance policies to that effect.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>l)</p></td>
+                                <td><p align="justify">The Promoter has provided vehicle parking spaces in the basement 
+                                    and hollow plinth in the Project as per the provisions of the prevalent General Development Control Regulations. It has been agreed between the Parties that the Promoter /Society, as the case may be, shall regulate the use and allotment of such parking spaces. The Promoter / Society shall make the most efficient use of the provided parking area so as to maximize the number of parking slots available for parking of cars and two-wheelers and if permissible the other open areas or marginal areas may be used for allotment of parking spaces to the occupiers of the Project subject to GDCR. The Allottee shall not raise any dispute in this regard. Along with the sale and purchase of said Unit, the Promoter shall allot dedicated parking space to the Allottee in the basement or in hollow plinth of the Project and the Allottee shall park his / her / its vehicle in that allotted space only. The Allottee acknowledges that the Promoter has not charged any price for allotment of parking spaces in the Project. The Allottee hereby aware and unequivocally agrees, consents and confirms that the Allottee and his/her family members shall park their vehicles only in their designated parking area and they shall not be entitled to park in visitor parking area or designated parking area of any other member / unit holder of the Project. The Allottee is aware that for purpose of better safety and security of premises and convenience to owners/end users, the entry/movement of heavy vehicles shall not be permitted inside the Project, without the express consent of the Promoter / the Society, as the case may be.
+                                    </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>m)</p></td>
+                                <td><p align="justify">The Allottee shall use the allotted parking space only for purpose of keeping or parking his/ her/ their/ its vehicle. Not to keep in the parking space anything other than private motor car or motor cycle and shall not raise or put up any kutcha or pucca construction grilled wall or enclosure thereon or part thereof and shall keep it always open as before. Dwelling or staying of any person or blocking by putting any articles therein shall not be permitted. The Allottee shall not park car on the pathway or open spaces of the Project and / or Shantigram Township or at any other place except the space allotted to the Allottee and shall use the pathways as would be decided by the Promoter/ Society.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>n)</p></td>
+                                <td><p align="justify">The Allottee hereby declares and confirms that except for the car park(s) allotted by the Promoter / Society, the Allottee/s do/es not require any parking space/s including open car parking space(s) and accordingly the Allottee/s waives his/ her/ its/ their claim, right, title, interest whatsoever on the areas of parking space(s) in the Project. The Allottee/s further agree(s) and undertake(s) that he / she / it shall have no concerns towards the identification and allotment/allocation of parking space(s) done by the Promoter / Society, at any time and shall not challenge the same. The Allottee/s agree(s) and acknowledge(s) that Society shall deal with the parking space(s) in the manner it deems fit, subject to the terms of bye-laws and constitutional documents of the Society / the relevant laws.  </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>o)</p></td>
+                                <td><p align="justify">The Allottee shall carry out their work relating to installation of furniture and 
+                                    fit-outs, in strict compliance of the fit out manual and the maintenance and operations in a professional manner with the least inconvenience to the other occupiers of the units in the Project and without causing any damage to any area, including the common areas of the Project and / or the Shantigram Township. In case of any default by the Allottee of the provisions of the said fit out manual, the Promoter shall be entitled to charge amount as per the terms of AFS and / or deduct / adjust the same from the deposit amount which is deposited by the Allottee as fit out security deposit, in accordance with the provisions of the AFS.
+                                    </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>p)</p></td>
+                                <td><p align="justify">The Allottee shall not store in the said Unit any goods which are of hazardous, combustible or dangerous nature or are so heavy as to damage the construction or structure of the Unit of any other structure of the Project or storing of which is objected to by the concerned local or other authority and shall take care while carrying heavy packages which may damage or are likely to damage the common properties of the Project, including entrances and in case any damage is caused in this behalf, the Allottee shall be liable for the consequences and expenses of the same. The Allottee shall not do or cause anything to be done in or around the Unit which may cause or tend to cause or tantamount to cause or effect any damage to any flooring or ceiling of the Unit or adjacent to the Unit. The Allottee shall not make in the Unit any structural additions and/or alterations to the beams, columns, partition walls, shear walls, etc. or improvements of a permanent nature. If the Allottee/s demolishes, punctures, and/or in any other way alters the existing walls and / or add or in any way put up a new concrete or masonry structure / partition in the Unit, then the same may result in endangering the stability of the building wherein the Unit is located, since the building structure is not designed to take such load. The Allottee shall indemnify and keep indemnified the Promoter in the event of happening of any of the events as mentioned above, the Allottee would be solely responsible for the same. Allottee/s shall be liable to pay all the costs for the damages and repairs which needs to be undertaken to ensure the safety of the said building / structure.</p></td>
+                            </tr>
+                     
+                            <tr>
+                                <td valign="top"><p>q)</p></td>
+                                <td><p align="justify">The Allottee shall not use the Unit for commercial purposes. If so found, the Promoter/ Society, as the case may be, shall be entitled to immediately stop such commercial use and impose upon the Allottee such penalty as it may deem fit. The Allottee shall strictly adhere to the rules and regulations of the Society with respect to the purpose and use of the Unit. The Allottee shall use the Unit only for residential purpose.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>r)</p></td>
+                                <td><p align="justify">The Allottee shall not demolish or carry out any additions / alterations / modifications of any nature in the Unit or any part thereof which are likely to cause any damage, hazard or structural deterioration to the said Unit or the neighboring premises and shall keep the portion, sewers, drains and pipes in the said Unit and the appurtenances thereto in good tenantable condition and repair, and in particular, so as to support the structure and or shelter and protect the other parts of the Project. The Allottee shall not modify or change the elevation and aesthetics / façade of the Project / said Unit or the color scheme for all times to come. The Allottee may carry out internal civil work (non-structural) with the prior written consent of the Promoter/Society and after obtaining a prior written opinion of a Structural Engineer of repute as also the prior permission of concerned authority having jurisdiction, if required under law. The Allottee shall not chisel or in any other manner cause damage to the columns, beams, walls, slabs or RCC structure or other structural construction in the said Unit. The Allottee hereby acknowledges, that it shall be the responsibility of the Allottee to ensure that the said Unit is kept in good repair, such that its structural stability is not compromised in any manner and the Allottee shall comply with all the statutory requirements in that regard.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>s)</p></td>
+                                <td><p align="justify">The Allottee shall not alter, amend, modify etc., the elevation and aesthetics of the Unit, and / or the Project, nor shall the Allottee alter, amend, modify the internal structure i.e. entrance lobby, lifts, staircase, terrace etc. of the Unit and shall keep the above in the same form as the Promoter constructs the same and shall not at any time alter the said elevation in any manner whatsoever without the prior consent of the Promoter or alter the attachments to the elevation of the Unit, including fixing or changing or altering grills, windows, air conditioners, chajjas etc. The Promoter’s decision in this regard would be final and binding on the Allottee.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>t)</p></td>
+                                <td><p align="justify">From the date of execution of this Deed, the Allottee shall be 
+                                    liable to pay such AMC/AUDA taxes, property taxes, Electricity Charges, Adani 
+                                    Gas charges, cessess, charges, maintenance charges or the like with respect to the said Unit. The Allottee shall also be liable to pay any and all betterment charges, water charges, or any connection or other outgoing charges in respect of the Unit.  Allottee shall bear and pay increase in local taxes, water charges, insurance and such other levies, if any, which are imposed by the concerned local authority/AUDA and/or Government and/or other public authority. 
+                                    </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>u)</p></td>
+                                <td><p align="justify">The Allottee agrees and undertakes that the Promoter shall not be responsible in any manner whatsoever in case of any attachment or other proceedings that may be made or taken in respect of the Unit and/or any part thereof by concerned authorities due to non-payment by the Allottee or any other unit occupiers of their respective proportion of the taxes/ outgoings payable to the concerned authorities on account of default in making such payments.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>v)</p></td>
+                                <td><p align="justify">The Allottee shall not alter/change the size and shape of the door, windows, shutters or the like and shall not make any holes or new windows to install air conditioner or coolers and shall not damage the partition walls, common walls, flooring, ceiling or the like of the Unit, except with the permission of the Promoter. And Allottee shall see and assures that no shades, awnings, window guards, ventilators, grills, sliding windows, air conditioning drainpipes or air conditioning devices shall be used in or outer side of the Unit except as has been approved by the Promoter. The Allottee shall not cover utility balcony.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>w)</p></td>
+                                <td><p align="justify">The Allottee shall keep his/her said Unit adequately insured against loss or damage by any calamity including fire, flood, earthquake, storm, tempest, aircraft collision, riot, sabotage or the like to the full value of the said Unit. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>x)</p></td>
+                                <td><p align="justify">The Allottee shall maintain at its own costs, the said Unit in the same good condition, state and order in which it is delivered to the Allottee and shall abide by all bye laws, rules and regulations of the government, Ahmedabad Urban Development Authority, Ahmedabad Municipal Corporation and any other authorities, local bodies or utility companies as the case maybe and the Society, and shall also attend to answer and be responsible for all actions and violations of any of the conditions or rules or bye laws and shall observe and perform all the covenants contained in this Deed.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>y)</p></td>
+                                <td><p align="justify">With respect to maintenance of the said Unit, the Project and the  Shantigram Township, the Promoter shall not be responsible for any consequences or liability on account of failure, negligence, obstruction, alteration, modification, restraint or improper use by any or all the owners, service providers or their agents with regards to the fire equipment's, fire protection systems, their supporting equipment's, pollution control and other general safety equipment's, related facilities and service maintenance contracts, certificates, licenses, permits, permission and insurance. The Allottee(s) shall ensure that periodical inspections of all such equipment's and facilities are made by them so as to ensure proper functioning of all such equipment’s. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>z)</p></td>
+                                <td><p align="justify">The Allottee hereby confirms that the responsibility for the maintenance, repair and proper up – keep of the fire fighting system shall be that of the Allottees / said Unit holders and any loss, damage, injury, accident, death caused by a fire break out or due to functioning/ non-functioning/mal-functioning of the fire fighting system, shall be the sole responsibility of the Allottee along with other Allottees / unit holders in the Project and no demand/ action/ claims whatsoever in respect of the same shall be made against the Promoter. The Allottee hereby acknowledges that in terms of the Applicable Law it shall be the responsibility of the owners of a units in the Project to ensure that the fire prevention and safety provisions in the Project are kept in good working conditions at all times. It will be the responsibility of the allottees / unit owners in the Project to ensure compliance of all the Applicable Law with respect to fire fighting in respect of their concerned unit at their own cost.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>aa)</p></td>
+                                <td><p align="justify">The Allottee hereby agrees that the stairs, veranda, lobbies and other such areas of a unit in the Project shall always belong to the unit holder/s or owner/s of the respective unit exclusively and in case where there are more than one unit holder or owner, such aforesaid rights shall be proportionate to the carpet area owned by every such unit holder / owner. The Allottee shall not construct any temporary or permanent construction on the terrace of the buildings in the Project. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>bb)</p></td>
+                                <td><p align="justify">The Allottee hereby irrevocably agrees that the Promoter alone shall have the absolute rights to undertake and carry out all future advertisement, publicity and communications related work through their advertising agency for publicity/ advertisement of or in connection with the Project. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>cc)</p></td>
+                                <td><p align="justify">That the Allottee shall permit the Promoter/Society, its employees, engineers, surveyors and agents and persons working through or under them and others, at all reasonable times, subject to a notice of at least 24 hours (except in cases of emergency) to enter in to and upon his/her/their Unit and any part thereof for the purpose of repairing of the Unit and for repairing cables, water lines and covers, gutters, wires, walls, structures and other conveniences belonging thereto and also for the purpose of laying down, maintaining, repairing, testing, drainage, gas and water pipes and electric wires and for similar purposes. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>dd)</p></td>
+                                <td><p align="justify">The Allottee is aware that sometimes the leakage of water from the toilets, bathrooms and wet areas may happen in the Unit. Leaked water/moisture may appear on the walls of the Unit and that may deteriorate the paint and plaster on the walls. Allottee/s are aware that water being a substance in liquid state is likely to escape, resulting into its leakage. Even if all safety measures are taken to seal the joints of pipes, sometimes it cannot be avoided. Leakage may be due to various reasons not connected with construction and cannot be construed to be defects. Allottee/s agrees that the Promoter shall not be liable for any damage in the Unit due to leakage of water and its various other after effects. However, the Allottee hereby undertakes to get repaired the toilets and wet areas at its own cost/expense in case such complaint is made.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>ee)</p></td>
+                                <td><p align="justify">The Lift facility in all the buildings of the Project shall be used as per rules of the Promoter / Society. It is to be economically used. The Allottee/s shall have to ensure that the lifts are not misused and will take care and co-operate with respect to the same. The Allottee has inspected and is satisfied that the lifts are of standard quality and necessary permissions are taken for its usage. However, it is a machine and is not manufactured by the Promoter. Therefore during the use of the lift and even as a result of any negligence or otherwise, if anyone is injured or any damage occurs then the Promoter shall not become responsible for it and the Allottee/s or their employees, heirs etc. shall not demand/shall not be entitled to demand such damages/ compensation from the Promoter/Society and Allottee/s hereby gives assurance and consent in it. It shall be the responsibility of the allottee/s of a building to ensure that the lifts in such building are kept in good maintenance and repair, such that its use is safe. It will be the responsibility of the owners/allottees of units in the Project to follow the maintenance protocol as mentioned in the manual of the lift manufacturer. Also, it shall be the responsibility of the owners/ allottee/s to take renewals of repair/maintenance contract and lift licenses at their own cost from the competent authority. The Allottee/s confirms to abide with the statutory requirement in this regard.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>ff)</p></td>
+                                <td><p align="justify">The Allottee hereby acknowledges that even after the Society has been formed with respect to the Project, the Promoter shall be entitled to sell or in any other manner transfer the un-sold  Unit (s) in the Project to any prospective allottee on such terms and conditions as it may deem fit and such allottee /transferee of un-sold unit shall be entitled to become member of the Society and use all Common Areas and Facilities in the Project with other unit holders/allottees. It is expressly agreed between the Parties and the Allottee hereby agrees and confirms that the Promoter shall not be liable to pay maintenance and any other charges of whatsoever nature on the unsold units in the Project. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>gg)</p></td>
+                                <td><p align="justify">The Promoter shall have right and free access to visit the unsold inventory / units with prospective buyers and the Allottee / Society / Association of Allottees / management entity shall have no objection for the same.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>hh)</p></td>
+                                <td><p align="justify">The Allottee hereby acknowledges and agrees that the possession of the Common Area and Facility of the Project shall be with the Society. The Allottee/s is/are aware that the other units in the Project shall be transferred in future and agreements and Sale deeds/Conveyance deed will be made in favor of such other allottees and hence, all the owners shall have undivided proportionate interest in the Project Land, Common Areas and Facilities and amenities and shall be entitled to use and enjoy them jointly subject to the applicable terms.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>ii)</p></td>
+                                <td><p align="justify">The Allottee and or its/his/her successors, assigns, heirs, transferees or the like, subject to the rules and regulations of the Society, shall duly execute all such applications, instruments and documents or the like and further do all such acts, deeds, matters and things as so required by the Society. The Allottee agrees and confirms, that its successors, assigns, heirs, transferees and or the like shall all be bound by all the covenants contained herein in this Deed and any corresponding obligations arising out of the same. Any future transfer, lease, license, assignment or devolution of the Allottee’s rights, title and or interest in the said Unit in favor of any other person shall be subject to and with the provisions of this Deed.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>jj)</p></td>
+                                <td><p align="justify">Allottee hereby represents that he has seen, verified and satisfied with all the documents pertaining to the Project and the Shantigram Township and its development and further covenants and assures that he/she shall not raise any requisition for further documents or objection to the title and/or the rights of the Promoter in relation to the Project Land on any ground whatsoever.</p></td>
+                            </tr>
+                            <tr style="page-break-before: always"></tr>
+                            <tr>
+                                <td valign="top"><p>kk)</p></td>
+                                <td><p align="justify">The Allottee shall also abide by the applicable building rules, regulations and bye-laws of the concerned Government. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>ll)</p></td>
+                                <td><p align="justify">The Allottee shall be entitled to transfer/sell, assign, convey, rent, mortgage, charge or in any way encumber or deal with or dispose of the said Unit or to assign, underlet or part with its interest under or benefit of this Deed or any part thereof in the Unit, subject to the prior written consent of the Promoter / Society, as the case may be, and such approval shall not be withheld, unless the Allottee is in any breach or default of any of the covenants and/or corresponding obligations arising out of this Deed or any other agreements entered into with the Society or its rules, resolution or like, as the case may be or if the activities of the transferor or transferee are prejudicial to the interest of the Project or the Society. In case of any lease, rent or license, it shall be the responsibility of the Allottee to inform about the same to any concerned authority including the local Police Station, if so required under law. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>mm)</p></td>
+                                <td><p align="justify">In case of any breach or default or failure to perform any of the covenants and corresponding obligations arising out of this Deed by the Allottee, the Promoter and/or the Society shall be entitled to specifically enforce and seek performance of such covenants and/or corresponding obligations.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>nn)</p></td>
+                                <td><p align="justify">The Allottee/s herein shall see and make sure that no bird or animal shall be kept or harboured in the common areas of the Project and / or the Shantigram Township. Encroachment of any common area of the Project and / or the Shantigram Township including the area in front of the entrance is not permitted. In no event shall dogs and other pets be permitted on the Common Areas and Facilities of the Project unless accompanied by their respective owner.  </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>oo)</p></td>
+                                <td><p align="justify">If the Allottee has damaged or caused to have damaged any of the common properties / amenities / facilities of the Project or the Allottee is found to have committed breach of any of the covenants and/or corresponding obligations under this Deed, the Promoter and/or the Society shall be entitled to seek remedial actions and/or rectification by the Allottee of such breach or damage caused. If the Allottee fails to rectify or remedy the breach or failure to perform its obligations, the Promoter and/or the Society shall have the right to rectify or remedy the same and recover the cost thereof from the Allottee. This shall be without prejudice to the right of the Promoter and/or Society as available under Applicable Law.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>pp)</p></td>
+                                <td><p align="justify">The Allottee, on becoming a member of the Society, shall ensure that the Society adheres to the terms and understanding of this Deed, the AFS and any such other document pertaining to the sale and purchase of the Unit, in letter and spirit and in furtherance thereto, the Allottee shall take such steps / actions, including using his / her / its voting rights, as are necessary to (i) protect the rights of the Promoter as referred to under this Deed, the AFS and any such other document pertaining to the sale and purchase of the Unit and (ii) comply with, and adhere to, the provisions of this Deed, the AFS and any such other document pertaining to the sale and purchase of the Said Unit. The Allottee shall cast its vote in the Society in such a manner that the Allottee ensures compliance of all the terms of this Deed, the AFS and any such other document pertaining to the sale and purchase of the Unit.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>qq)</p></td>
+                                <td><p align="justify">If the Allottee or its transferee commits breach of any of the covenants, representations and warranties herein contained then the Promoter/Society shall be entitled to levy necessary penalty/fine for such breach and the Promoter/Society shall also direct the Allottee to take necessary corrective steps to remedy the breach of conditions herein contained.</p></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>3.</b></p></td>
+                    <td><p align="justify"><b>RULES</b></p>
+                        <p  align="justify">The Allottee shall strictly comply with the following rules pertaining to the use and occupancy of the Unit, the Project and Shantigram Township: </p>
+                        <table width="100%">
+                            <tr>
+                                <td width="7%"><p>(a)</p></td>
+                                <td width="93%"><p  align="justify">Allottee shall not make or permit any disturbing noises in the Project and Shantigram Township or do or permit anything to be done therein which will interfere with the rights comfort or convenience of other allottees in the Project including the Project / Shantigram Township. Allottee shall not use any loudspeaker in the Unit if the same shall disturb or annoy other occupants of the Project / Shantigram Township.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(b)</p></td>
+                                <td><p align="justify">No sign, notice or advertisement shall be inscribed or exposed on or at a window or other part of the Unit and / or the Project except such, as shall have been approved by the Promoter, nor shall anything be projected out of any window of the said Unit without similar approval. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(c)</p></td>
+                                <td><p align="justify">Utility balcony should not be covered and windows and frames of windows of each Units should not be modified or replaced. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(d)</p></td>
+                                <td><p align="justify">Water-closets and other water apparatus in the Project shall not be used for any purpose other than those for which they were constructed nor shall any sweepings, rubbish, rags or any other article be thrown into the same. Any damage resulting from misuse of any of the water-closets or apparatus shall be paid for by the Allottee.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(e)</p></td>
+                                <td><p align="justify">Garbage and refuse from the Unit shall be deposited in such place and at such time and in such manner as the Promoter/ Society may direct. The Allottee will be responsible to ensure that the garbage and refuse are collected and disposed in a proper manner. That the dry and wet garbage shall be separated, and the wet garbage generated in the building, wherein the Unit is located, shall be treated separately by Allottee and other unit occupants of such building. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(f)</p></td>
+                                <td><p align="justify">No vehicle belonging to an Allottee or to a member of the family or guest, tenant or employee of the Allottee shall be parked in the open space or in such manner as to impede or prevent ready access to the Project.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(g)</p></td>
+                                <td><p align="justify">The lobbies, entrances and stairways of the Project shall not be obstructed or used for any purpose other than ingress to and egress from the Unit.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(h)</p></td>
+                                <td><p align="justify">No article shall be allowed to be placed in the staircase landings or fire towers or fire refuge area nor shall anything be hung or shaken from the floor, windows, terraces or balconies or place upon the window grills of the Project. No Plant Pots, artificial grass, plants, sheds, hanging pots shall be allowed to place in the passage, balconies or frontage of Units without the prior approval of the Promoter / Society. No fences, plastic sheds or partitions shall be placed or affixed to any terrace/balconies without the prior approval of the Promoter / Society.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(i)</p></td>
+                                <td><p align="justify">No aerial shall be attached to or hung from the exterior of the Said Unit.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>(j)</p></td>
+                                <td><p align="justify">(j)	These rules may be added to, amended or repealed at any time by the Promoter / Society.</p></td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>4.</b></p></td>
+                    <td><p align="justify"><b>Representations, Warranties and Covenants of the Promoter</b></p>
+                        <p align="justify">The Promoter doth hereby represents, warrants, covenants and undertakes as under:</p>
+                        <table width="100%">
+                            <tr>
+                                <td width="7%" valign="top"><p>a)</p></td>
+                                <td width="93%"><p align="justify">The Promoter doth hereby for itself, its successors and assigns covenant with the Allottee that notwithstanding any act, deed, matter or thing whatsoever by the Promoter or any of their ancestors or testators or any person or persons lawfully, or equitably claiming by, from, through, under him or them or omitted or knowingly suffered to the contrary the Promoter has good right, full power and absolute authority to allot, grant and assure the Unit hereby granted / conveyed unto and to the use of the Allottee in the manner aforesaid and subject to the terms and conditions stated in this Deed and also subject to rules, regulations and resolutions of the Society.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>b)</p></td>
+                                <td><p align="justify">The Promoter has all rights and authority under law to convey, grant, release and assure the Unit hereby conveyed, granted, released or assured or intended so to be unto and to the use of the Allottee in the manner aforesaid and subject to the covenants and or corresponding obligations under this Deed and also subject to the rules, regulations and resolutions of the Society. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>c)</p></td>
+                                <td><p align="justify">The Allottee may at all time hereafter peacefully and quietly enter upon, occupy, possess and enjoy the Unit and receive the rents and profits thereof and of every part there to and for his/her/its use and benefit without any suit, eviction, interruption, claim or demand whatsoever from or by the Promoter or any person through or under it. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>d)</p></td>
+                                <td><p align="justify">The Unit and Project Land and construction thereon or any part thereof is not under any acquisition, requisition or reservation for any purpose whatsoever. No one has any right of maintenance or otherwise from and over the Unit and that the Unit is free from any encumbrances, mortgages, lien or charge of any nature whatsoever and that the Promoter has not taken any loan or financial assistance of any nature from anyone by creating charge over the Unit or its title deeds. Therefore, the Unit is free from any mortgage or charge.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>e)</p></td>
+                                <td><p align="justify">If within a period of (5) five years from date of handing over the possession of the Unit, the Allottee brings to the notice of the Promoter any structural defect in the Unit or any defects on account of workmanship, quality or provision of service, then wherever possible, such defects shall be rectified by the Promoter at its own cost and in case it is not possible to rectify such defects, then the Allottee shall be entitled to receive from the Promoter, compensation equal to the cost to cure / rectify such defect. Provided that the Promoter shall not be liable to rectify any defect or for payment of any compensation in the following cases:</p>
+                                    <ol style="list-style-type: lower-roman;">
+                                        <li><p align="justify">If the cause of any such defect is not attributable to the Promoter or are because of Force Majeure Events and or beyond the control of the Promoter; </p></li>
+                                        <li><p align="justify">In case of natural wear and tear and/or damage resulting from rough handling, improper use or unauthorized modification; </p></li>
+                                        <li><p align="justify">if such defects/ damage has occurred by act of negligence of Allottee, including while carrying out any internal changes to the said Unit.</p></li>
+                                        <li><p align="justify">In case where guarantees and warrantees are provided by the third parties, the same shall be extended to the Allottee. The Promoter shall not be liable for any such warrantees and guarantees which shall be on such terms and conditions as provide for by the third party. Further where the manufacturer guarantee / warranty as provided by the third party ends before the defects liability period and such warranties are covered under the maintenance of the said Unit, and if the annual maintenance contracts or applicable licenses are not executed/renewed by the Allottee / Society, the Promoter shall not be responsible for any defects occurring due to the same; </p></li>
+                                        <li><p align="justify">The Society or the Allottee has not adhered to maintenance schedule and operating manual as prescribed by the manufacturer/Promoter.</p></li>
+                                        <li><p align="justify">The Allottee has carried out any alterations of any nature in the said Unit which shall include but not be limited to alterations in columns, beams etc. or in the fittings therein, pipes, water supply connections or any erection or alteration in the bathroom, toilet etc. If any of such work/s is/are carried out then the defect liability of the Promoter automatically shall become void.</p></li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>f)</p></td>
+                                <td><p align="justify">The proportionate, undivided title of the Project Land is transferred to the Allottee but peaceful possession of the Project Land, the Common Areas and Facilities shall be handed over to the Society. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>g)</p></td>
+                                <td><p align="justify">The Promoter has duly paid and discharge all applicable government dues, rate, charges and taxes including without limitation Panchayat taxes, AMC/AUDA Cesses, revenue taxes and the like in respect of the said Unit and/or the Project to the competent authorities till the execution of this Deed and / or the Cut Off Date (as defined in AFS) as the case may be.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>h)</p></td>
+                                <td><p align="justify">THE PROMOTER SHALL HAVE NO CLAIM / RIGHT ON TERRACE RIGHTS AFTER BUILDING USE PERMISSION HAS BEEN OBTAINED, SUCH RIGHTS IF ANY, WILL BE ENCLOSED BY THE SOCIETY OF BUYERS.</p></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><b>5.</b></p></td>
+                    <td><p><b>Other Terms </b></p>
+                        <table width="100%">
+                            <tr>
+                                <td width="7%" valign="top"><p>a)</p></td>
+                                <td width="93%"><p align="justify">All the covenants, terms, conditions, stipulations and provisions of this Deed have been agreed and acknowledged by the Allottee and the Allottee shall ensure that the same shall be binding to any of the subsequent Allottee/s of the Unit, in case of a transfer, assignment or devolution, as the case may be. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>b)</p></td>
+                                <td><p align="justify">The Project shall always be known as “<b>AMOGHA</b>”. This name shall not be changed under any circumstances by the Allottee and other unit holders in the Project either by themselves or through the Society. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>c)</p></td>
+                                <td><p align="justify">The Unit is situated outside the area covered by the Gujarat Prohibition of Transfer of Immovable Property and Provisions for Protection of Tenants from Eviction from premises in disturbed area Act, 1991 and therefore, no prior permission of the Collector of Ahmedabad is required to be obtained under the aforesaid Act for the transfer of conveyance thereof under this Deed. </p></td>
+                            </tr>
+                          
+                            <tr>
+                                <td valign="top"><p>d)</p></td>
+                                <td><p align="justify">The expenses of this Deed including without limitation applicable Stamp Duty, Additional Stamp Duty (if any) on any count, Registration fees, miscellaneous expenses and the like shall be borne by the Allottee alone. In the event that, any document is required to be executed for transfer of proportionate undivided share in favour of Society, then the Allottee shall execute such document and bear and pay the requisite stamp duty and registration fees there on. As per prevailing Gujarat Stamp (Amendment) Act, 2019 4.90% stamp duty i.e. Rs. ___________/- (Rupees _________________________ only) has been affixed on this Deed.</p></td>
+                            </tr>
+                            <tr style="page-break-before: always"></tr>
+                            <tr>
+                                <td valign="top"><p>e)</p></td>
+                                <td><p align="justify">All the provisions of the AFS with respect to use, possession, ownership and occupancy of the Unit, the Project and the Shantigram Township shall continue to survive and binding on the Allottee and the same shall be deemed to be reproduced herein this Deed and shall form an integral part of this Deed. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>f)</p></td>
+                                <td><p align="justify">Words / terms capitalized and not defined in this Deed shall have the same meaning as is ascribed to them in the AFS. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>g)</p></td>
+                                <td><p align="justify">All notices, communication, letter, correspondence etc.  to be served on the Allottee and the Promoter as contemplated by this Deed shall be deemed to have been duly served if sent to the Allottee or the Promoter by Registered Post A.D, standard courier with receipt acknowledgement or notified Email ID, at their respective addresses specified below:</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>h)</p></td>
+                                <td><p align="justify">It shall be the duty of the Allottee and the Promoter to inform each other of any change in address subsequent to the execution of this Deed in the above address by Registered Post failing which all communications and letters posted at the above address shall be deemed to have been received by the Promoter or the Allottee, as the case may be.</p>
+                                    <p><b>Allottee:</b></p>
+                                    <p>Viz. _______________________________</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______________________________</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______________________________</p>
+                                    <p>Email ID : _______________________________</p>
+                                    <p>Phone No: _______________________________</p>
+                                    <br/>
+                                    <p><b>Promoter:</b></p>
+                                    <p><b>ADANI ESTATE MANAGEMENT PRIVATE LIMITED, </b></p>
+                                    <p>CBD BUILDING, SHANTIGRAM TOWNSHIP,</p>
+                                    <p>S.G.HIGHWAY, AHMEDABAD - 382421</p>
+                                    <p><b>Email ID:</b> customercare@shantigram.com</p>
+                                    <p><b>Phone No:</b> 079-25559700</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>i)</p></td>
+                                <td><p align="justify"><b>Dispute Resolution:</b> Any dispute between Parties shall be settled amicably. In case of failure to settle the dispute amicably, the same shall be referred to the Authority as per the provisions of the Real Estate (Regulation and Development) Act, 2016, Rules and Regulations, thereunder. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>j)</p></td>
+                                <td><p align="justify">Subject to what is stated in sub-clause (i) hereinabove, this Deed shall be governed by the laws of India and the courts at Ahmedabad, Gujarat shall have exclusive jurisdiction in respect of all disputes arising out of or in connection with any matter set out hereinabove. </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>k)</p></td>
+                                <td><p align="justify">Any delay tolerated or indulgence shown by the Promoter / Society, in enforcing the terms, conditions, covenants, stipulations and/or provisions of this Deed, or any forbearance, or giving of time, to the Allottee by the Promoter / Society, shall not be treated/ construed/ considered, as a waiver or acquiescence on the part of the Promoter / Society of any breach, violation, non-performance or non-compliance by the Allottee of any of the terms, conditions, covenants, stipulations and/or provisions of this Deed, nor shall the same in any manner prejudice, the rights/ remedies of the Promoter / Society.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>l)</p></td>
+                                <td><p align="justify"><b>Further Assurances:</b> Both Parties agree that they shall execute, acknowledge and deliver to the other such instruments and take such other actions, in additions to the instruments and actions specifically provided for herein, as may be reasonably required in order to effectuate the provisions of this Deed or of any transaction contemplated herein or to confirm or perfect any right to be created or transferred hereunder or pursuant to any such transaction.
+                                    </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>m)</p></td>
+                                <td><p align="justify">Severability: If any provision of this Deed shall be determined to be void or unenforceable under the Real Estate (Regulation And Development) Act, 2016 or the Rules and Regulations made thereunder or under other applicable laws, such provisions of the Deed shall be deemed amended or deleted in so far as reasonably inconsistent with the purpose of this Deed and to the extent necessary to conform to said Act or the Rules and Regulations made thereunder or the applicable law, as the case may be, and the remaining provisions of this Deed shall remain valid and enforceable as applicable at the time of execution of this Deed.</p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>n)</p></td>
+                                <td><p align="justify">Except where the context requires otherwise: </p>
+                                    <ol style="list-style-type: lower-roman;">
+                                        <li><p align="justify">the Recitals to this Deed contained hereinabove shall constitute an integral part of this Deed;</p></li>
+                                        <li><p align="justify">headings are for convenience only and shall not affect the construction or interpretation of any provision of this Deed;</p></li>
+                                        <li><p align="justify">where a word or phrase is defined, other parts of speech and grammatical forms and the cognate variations of that word or phrase shall have corresponding meanings;</p></li>
+                                        <li><p align="justify">words importing the singular shall include plural and vice versa;</p></li>
+                                        <li><p align="justify">the Annexures and Schedules hereto shall constitute an integral part of this Deed;</p></li>
+                                        <li><p align="justify">all words (whether gender-specific or gender neutral) shall be deemed to include each of the masculine, feminine and neuter genders;</p></li>
+                                        <li><p align="justify">any reference to Allottee shall mean reference to all Allottees in case if there are more than one Allottee.</p></li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>o)</p></td>
+                                <td><p align="justify">The Promoter herein <b>ADANI ESTATE MANAGEMENT PRIVATE LIMITED</b>, has authorized and appointed Mr _________________,  as the Authorized Signatory of the said Promoter through its board resolution dated _____________,  to sign and execute and register the Deed on behalf of the said Promoter.
+                                    </p></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><p>p)</p></td>
+                                <td><p align="justify">Stamp Duty &amp; Registration Charges: The cost and expenses of applicable stamp  duty and registration and legal charges, fees, other Misc. expenses with respect to this Deed and any other such document with respect to the said Unit shall be solely borne by the Allottee only. The Allottee/s will also be responsible to pay additional stamp duty, registration fees, penalty, fine etc if asked for by stamp duty valuation authority under the Stamp Act as well as under the Registration Act. </p></td>
+                            </tr>
+                        </table>
+                       
+
+                    </td>
+                </tr>
+            </table>
+            <p>The schedule above referred to are mentioned hereunder:-</p>
+            <p style="page-break-before: always"></p>
+            <p align="center"><b><u>FIRST SCHEDULE</u></b></p>
+            <p align="center" style="padding-top:20px;padding-bottom:20px;"><b><u>(Description of the Project Land)</u></b></p>
+            <p align="justify"> All those piece and parcels of Non Agricultural land being (1) Part of Block No 318 admeasuring about 3469.23 sq.mtrs (2) Part of Block No 319 admeasuring about 1133.91 sq.mtrs (3) Part of Block No. 327 admeasuring about 8181.54 sq.mtrs (4) Part of Block No. 328 admeasuring about 1080.17 sq.mtrs aggregately admeasuring 13864.85 sq mts situate at Moje Khodiyar, Taluka Daskroi, Registration District Ahmedabad, and Sub-District Registration at Ahmedabad – 8 [sola].</p>
+            <p align="center " style="padding-top:20px;"><b><u>SECOND SCHEDULE</u></b></p>
+            <p align="center" style="padding-bottom:20px; "><b><u>(Description of the Unit)</u></b></p>
+            <p align="justify">All that immovable Residential Unit being, Unit No. _____ admeasuring about ___________  sq.mtrs / ___________ sq.ft Carpet Area as per RERA and exclusive balcony having approximate area of ___________  sq.mtrs / ___________ sq.ft. and exclusive wash area of ___________  sq.mtrs / ___________ sq.ft. situated on _____ Floor of Tower _____ (shown in floor plan annexed herewith as Annexure C highlighted with red color boundary) thereon in the Project together with the proportionate undivided share admeasuring about _____ sq.mtrs in the Project Land in Shantigram Township situate lying and being at Moje Khodiyar, Taluka Ghatlodia, in the Registration District of Ahmedabad, and Registration Sub District at Ahmedabad – 8 [Sola], along with proportionate right to use Common Areas and Facilities, more particularly described in the Third Schedule hereunder written.</p>
+            <p >The said Unit is bounded as under;</p>
+            <p style="padding:20px">On or towards East	:	____________</p>
+            <p style="padding:20px">On or towards West	:	____________</p>
+            <p style="padding:20px">On or towards North	:	____________</p>
+            <p style="padding:20px">On or towards South	:	____________</p>
+        </div>
+    </body>
+</apex:page>

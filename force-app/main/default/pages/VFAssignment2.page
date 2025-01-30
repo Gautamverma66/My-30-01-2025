@@ -1,0 +1,36 @@
+<apex:page controller="ObjectsController2" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection id="SecA" columns="6">
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel value="Object List" />                   
+                    <apex:selectList rendered="true" id="SecAList" value="{!selectedVal}" size="1" multiselect="false" >
+                        <apex:selectOptions rendered="true" value="{!objOptionsList}" />                        
+                        <apex:actionSupport event="onchange" rendered="true" action="{!fetchFields}" />
+                    </apex:selectList>                 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <!--apex:outputLabel id="details" value="{!description}">
+                        {!selectedVal} Fields:                
+                    </apex:outputLabel-->
+                </apex:pageBlockSectionItem>
+                <apex:CommandButton value="Reset"/>  
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="SecB" columns="4">
+
+            <apex:selectList size="10" label="{!selectedVal} Fields:" multiselect="true" value="{!addField}">
+                <apex:selectOptions value="{!fieldList}"/>
+            </apex:selectList> 
+                
+            <apex:commandButton value="Add"/>
+            <apex:commandButton value="Remove"/>
+                
+            <apex:selectList multiselect="true">                    
+            </apex:selectList>
+        
+            <apex:commandButton value="Process Records"/>
+        
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page standardController="Contact" recordSetVar="contacts">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="First" action="{!first}" disabled="{!hasPrevious}" />
+                <apex:commandButton value="Previous" action="{!previous}" disabled="{!hasPrevious}" />
+                <apex:commandButton value="Next" action="{!next}" disabled="{!hasNext}" />
+                <apex:commandButton value="Last" action="{!last}" disabled="{!hasNext}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!contacts}" var="c">
+                <apex:column value="{!c.name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

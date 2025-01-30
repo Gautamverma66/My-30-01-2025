@@ -1,0 +1,95 @@
+<template>
+    <lightning-combobox name="progress"
+                        label="Select Contact"
+                        value={selectedContact}
+                        placeholder="Select Contact"
+                        options={contacts}
+                        onchange={handleContactChange}
+                        ></lightning-combobox>
+    <template if:true={isLoading}>
+
+    <div class="slds-p-around_x-large" >
+        <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+    </div>
+    </template>
+    <template if:true={tableShow}>
+    <div class="slds-var-m-around_x-small"  >
+    <lightning-button variant="brand"
+                        label="Upload File"
+                        title="Upload File"
+                        onclick={openModal}
+                        class="slds-m-left_x-small">
+    </lightning-button>
+    </div>
+    <br/>
+    <br/>
+    
+    <table class="slds-table slds-table--bordered ">
+        <thead style="background-color:  #ABBAEA;height:30px;width:100%;" >
+            <td>
+                <div >Icons</div>
+            </td>
+            <td>
+                <div>Name</div>
+            </td>
+            <td>
+                <div>Type</div>
+            </td>
+        </thead>
+        <tbody>
+            <template for:each={files} for:item="file">
+                <tr key={file.Id}>
+                    
+                   
+                    <td><lightning-icon icon-name='standard:file' alternative-text='file' size='small' title='file'></lightning-icon></td>
+                  
+                  
+                    <td>
+                        <a >
+                        {file.Title} 
+                        </a>
+                    </td>
+            
+                    <td>
+                         {file.FileExtension}
+                    </td>
+                   
+                </tr>
+            </template>
+        </tbody>
+    </table>   
+    </template>
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Upload</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning-input type="file" 
+                        accept=".xlsx, .xls, .csv, .png, .doc, .docx, .pdf"
+                        label="Attachment" onchange={openfileUpload}></lightning-input>
+                   
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleClick} title="OK">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template> 
+</template>

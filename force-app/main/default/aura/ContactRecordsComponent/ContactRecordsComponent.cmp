@@ -1,0 +1,15 @@
+<aura:component controller="ContactAuraComponentController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+   
+    <aura:attribute name="contactList" type="List" />
+    <aura:attribute name="column" type="List" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.fatchRecords}" />
+    <lightning:datatable data="{! v.contactList }"
+                     columns="{! v.column }"
+                     keyField="Id"
+                     hideCheckboxColumn="true">
+	</lightning:datatable>
+  <!--  <aura:iteration items="{!v.contactList}" var="con" >
+        Contact Name={!con.LastName}<br/>
+    </aura:iteration> -->
+</aura:component>

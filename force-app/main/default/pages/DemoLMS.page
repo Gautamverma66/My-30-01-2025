@@ -1,0 +1,52 @@
+<apex:page >
+    <apex:includeLightning />
+    <div>
+        <p>Enter Your Message Here:</p>
+        <input type="text" id="theMessage"  />
+        <button onclick="publishMC()" render="LightningAppDiv1Id"> Publish Msg</button>
+    </div>
+    <br/>
+    <br/>
+    <div id="LightningAppDivId"  >
+        <!-- Lightning Web Component will be included here. -->
+    </div>
+    <br/>
+    <div id="LightningAppDiv1Id"  >
+        <!-- Lightning Web Component will be included here. -->
+    </div>
+    
+    <script>
+        $Lightning.use(
+            "c:DemoLMSApp", // Name of Aura Dependency app where c is namespace.
+            function() { // Callback function
+                $Lightning.createComponent(
+                    "c:LMSTesting1", // Name of Lightning Component where c is namespace.
+                    {}, // attribute parameters
+                    "LightningAppDiv1Id" // Id of the element where Lightning Component will be rendered.
+                );
+                $Lightning.createComponent(
+                    "c:LMSTesting", // Name of Lightning Component where c is namespace.
+                    {}, // attribute parameters
+                    "LightningAppDivId" // Id of the element where Lightning Component will be rendered.
+                );
+            }
+        );
+    </script>
+    <script>
+      
+        // Load the MessageChannel token in a variable
+        var SAMPLEMC = "{!$MessageChannel.Demo__c}";
+
+        function publishMC() {
+            console.log('--publishMC--');
+            const payload = {
+                source: "Visualforce",
+                messageBody: 'VF page send'
+            };
+            console.log('--publishMC--',payload);
+            sforce.one.publish(SAMPLEMC, payload);
+
+        }
+
+    </script>
+</apex:page>

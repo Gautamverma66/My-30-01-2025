@@ -1,0 +1,172 @@
+<apex:page renderAs="pdf"  standardStylesheets="False" applyHtmlTag="False" applyBodyTag="False" showheader="False">
+    <Html>
+        <Head>
+            <Style>
+                @page {
+                margin-left: 2cm;
+                margin-right: 2cm;
+                margin-top: 2cm;
+                margin-bottom: 4.5cm;
+                    @top-left{                 
+                    
+                    } 
+                    @bottom-left{
+                    content: element(footer);
+                    }
+                   
+                }
+                
+               
+                div.footer{
+                font-size: 10px;
+                border-top: 1px solid black;
+                position:running(footer);
+                }
+               
+                
+            </Style>
+        </Head> 
+        <body>
+            <div class="footer" >
+                <table>
+                    <tr>
+                        <td width="80%">
+                            <p>Adani Brahma Synergy Pvt. Ltd.<br/>
+                                Samsara Sales Gallery Scetor 63,Golf<br/>
+                                Course Extension Road 0pp. AIPL<br/>
+                                Business Club Haryana,India,Gurugram
+                                122001<br/>
+                                Register Office:  Block-C, Flat No.53, Flatted Factory Complex, Jhandewalan, New Delhi- 110055<br/></p>
+                        </td>
+                        <td  width="20%">
+                            <p>Tel :  <br/>
+                                @adani.com <br/>
+                                CIN : U452D0DL2017rrCjl752 <br/>
+                                GST No. : <br/></p>
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            <div>
+                <p align="center"><b><u>DEMAND LETTER</u></b></p>
+                <table width="100%">
+                    <tr>
+                        <td width="65%">
+                            <p><b>M/s GOA MEDICOS PVT. LTD. <br/>
+                                1501-1504, TOWER-B, EMAAR DIGITAL <br/>
+                                GREENS, GOLF COURSE EXT. RAOD,<br/>
+                                SECTOR-61, GURUGRAM-122102,<br/>
+                                India<br/>
+                            </b></p>
+                        </td>
+                        <td  width="30%">
+                            <p><b>Re£No. :</b> 23-10-0011702 <br/>
+                                <b>Date :</b> 06.10.2023 <br/>
+                                <b>Customer ID :</b> AD 23-013352<br/>
+                                <b>BY COURIER</b><br/></p>
+                        </td>
+                    </tr>
+                </table>
+                <p><b>Tel:</b> 9999878287<br/>
+                <b>Email: </b>snnnysyal@.goamedicos.com</p>
+                <p>Dear Sir / Madam,</p>
+                <p align="justify">Sub : Demand for payment of Instalment(s) due towards Unit No. - 36 of Scheme "DOWNTOWN AVENUE" situated in SECTOR-62, GURUGRAM, HARYANA.</p>
+                <p align="justify">As per the agreed terras and conditions mentioned in the Application of Booking with respect to the above mentioned Unit,please note that the following instalment(s) has / have fallen due for payment as per the agreed payment schedule.:</p>
+                <table width="100%" border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th align="center"><b>Installment Details</b></th>
+                        <th align="center"><b>Installment Due Date</b></th>
+                        <th align="center"><b>Installment Amount (INR)</b></th>
+                        <th align="center"><b>TAX (INR)</b></th>
+                        <th align="center"><b>Total Amount (INR)</b></th>
+
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px;" colspan="5">Previous Demand</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px;" >At the time of Booking</td>
+                        <td align="center">05.10.2023</td>
+                        <td align="center">2,500,000</td>
+                        <td align="center">0</td>
+                        <td align="center">2,500,000</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding-left:4px;" colspan="4">Total Previous Demand</td>
+                        <td align="center">2,500,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px;" colspan="5">Current Demand</td>
+                       
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px;" colspan="4">Total Current Demand</td>
+                        <td align="center">0</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px;" colspan="4">Total Immediate Demand</td>
+                        <td align="center">2,500,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px;" colspan="4">Total Payment Received</td>
+                        <td align="center">2,500,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px;" colspan="4">Net Immediate Demand</td>
+                        <td align="center">0</td>
+                    </tr>
+                </table>
+                <p align="justify">You are requested to execute and register the Agreement for Sale in accordance with HRERA and make payment of theafore stated instalment(s) within 15 days / on or before as per the agreed payment schedule.</p>
+                <p align="justify">Any delay to execute and register the Agreement for Sale and payment(s) of afore stated amotmts will invite interest accrual
+                    @ State Bank of India's marginal cost of lending rate plus two percent per annum on the delayed payments, in accordance
+                    with the agreed terms, without prejudice to our rights to initiate cancellation and forfeiture. Modes of payments and other
+                    related terms are provided in the Anncxure annexed hereto. Any amount received will be first allocated towards delayed
+                    payment charges / interest, other charges, applicable taxes, and balance against milestone / instalment amount.
+                </p>
+                <p align="justify">Payment made through online transfers (RTOS / NEFT / IMPS) and direct cheque deposit / DD must be infomie4to us by
+                    sending a communication to crm.ncr@adanirealty.com. along with necessary details like Cust ID, Ref. No, Unit No. and
+                    payment towards which instalment Absence of such communication would lead to funds lying as unidentified
+                </p>
+                <p align="justify">In case you have already made the aforestated payments, kindly confirm the same with relevant details.
+                </p>
+                <table align="center" width="80%" border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><b>Flat Cost :</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">ABSPL - Downtown Avenue Collection A/c</td>
+                    </tr>
+                    <tr>
+                        <td align="center">IndusInd Bank Ltd</td>
+                    </tr>
+                    <tr>
+                        <td align="center">A/c No - 251901202301</td>
+                    </tr>
+                    <tr>
+                        <td align="center">IFSC Code - INDB0000022</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Branch - Block A, Sushant Lok, Phase I, Tower B, First India Place, Gr. Floor, Mehrauli-Gurgaon Road,Gurgao</td>
+                    </tr>
+                </table>
+                <table align="center" width="80%" border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td ><b>Name of the Company</b></td>
+                        <td ><b>Address</b></td>
+                        <td ><b>PAN No.</b></td>
+                        <td><b>TAN No.</b></td>
+                    </tr>
+                    <tr>
+                        <td   style="padding-top:10px;padding-bottom:10px;" >Adani Barhma Synergy Pvt. Ltd.</td>
+                        <td  style="padding-top:10px;padding-bottom:10px;" >Block-C, Flat No.53, Flatted Factory Complex, Jhandewalan, New Delhi - 110055</td>
+                        <td  style="padding-top:10px;padding-bottom:10px;" >AAPCA5275K</td>
+                        <td  style="padding-top:10px;padding-bottom:10px;">DELA44189F</td>
+                    </tr>
+                   
+                </table>
+            </div>
+        </body>
+    </Html>
+
+</apex:page>

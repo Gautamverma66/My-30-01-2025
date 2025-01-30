@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="slectedPicklist" type="String" />
+    <aura:attribute name="record" type="List" />
+    
+    <aura:iteration items="{!v.record}" var="re">
+         <aura:if isTrue="{!valu == re.v.slectedPicklist}"><br/>
+             <div class="slds-box" >
+                 {!rec.Name}<br/>
+             </div>
+        </aura:if>
+    </aura:iteration>
+</aura:component>

@@ -1,0 +1,49 @@
+<apex:page >
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection id="pbs">
+                <apex:inputCheckbox label="Master" id="Master" onclick="mastercheck()"/><br/>
+                <apex:inputCheckbox label="Child 1" id="Child1" onclick="childcheck()"/><br/>
+                <apex:inputCheckbox label="Child 2" id="Child2" onclick="childcheck()"/><br/>
+                <apex:inputCheckbox label="Child 3" id="Child3" onclick="childcheck()"/><br/>
+                <apex:inputCheckbox label="Child 4" id="Child4" onclick="childcheck()"/><br/>
+            </apex:pageBlockSection>
+            <script>
+                function childcheck(){
+                    var mastercheckbox=document.getElementById('{!$component.pbs.Master}');
+                    var childcheckbox1=document.getElementById('{!$component.pbs.Child1}');
+                    var childcheckbox2=document.getElementById('{!$component.pbs.Child2}');
+                    var childcheckbox3=document.getElementById('{!$component.pbs.Child3}');
+                    var childcheckbox4=document.getElementById('{!$component.pbs.Child4}');
+                    if(childcheckbox1.checked==true && childcheckbox2.checked==true && childcheckbox3.checked==true && childcheckbox4.checked==true){
+                        mastercheckbox.checked=true;
+                    }
+                    else if(childcheckbox1.checked==false || childcheckbox2.checked==false || childcheckbox3.checked==false || childcheckbox4.checked==false){
+                        mastercheckbox.checked=false;
+                    }
+                }
+            
+           
+            	function mastercheck(){
+                    var mastercheckbox=document.getElementById('{!$component.pbs.Master}');
+                    var childcheckbox1=document.getElementById('{!$component.pbs.Child1}');
+                    var childcheckbox2=document.getElementById('{!$component.pbs.Child2}');
+                    var childcheckbox3=document.getElementById('{!$component.pbs.Child3}');
+                    var childcheckbox4=document.getElementById('{!$component.pbs.Child4}');
+                    if(mastercheckbox.checked==true){
+                        childcheckbox1.checked=true;
+                        childcheckbox2.checked=true;
+                        childcheckbox3.checked=true;
+                        childcheckbox4.checked=true;
+                     }
+                    else{
+                        childcheckbox1.checked=false;
+                        childcheckbox2.checked=false;
+                        childcheckbox3.checked=false;
+                        childcheckbox4.checked=false;
+                     }
+                    }
+              </script>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

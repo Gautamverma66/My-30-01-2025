@@ -1,0 +1,32 @@
+<template>
+            <div  style="border-style: solid;border-width: 2px;border-radius: 5px;border-color: gray;margin-top:10px;padding-bottom:10px;padding-top:10px;">
+                
+                <table  >
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><lightning-button value={conDetails.Id} variant="brand" label="Add Task" title="Primary action" onclick={handleTask} class="slds-m-left_x-small"></lightning-button>
+                            <lightning-button value={conDetails.Id} variant="destructive" label="Delete Contact" title="Primary action" onclick={handleDelete} class="slds-m-left_x-small"></lightning-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="45%">
+                            <lightning-input data-id={conDetails.Id} data-field ='FirstName' type="text" value={conDetails.FirstName} label="First Name" onchange={handleChange}></lightning-input>
+                        </td>
+                        <td width="10%"></td>
+                        <td width="45%">
+                            <lightning-input data-id={conDetails.Id} data-field ='LastName' type="text" value={conDetails.LastName} label="Last Name" onchange={handleChange}></lightning-input>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td>
+                            <lightning-input data-id={conDetails.Id} data-field ='Email'  type="text" value={conDetails.Email} label="Email" onchange={handleChange}></lightning-input>
+                        </td>
+                        <td></td>
+                        <td>
+                            <lightning-input data-id={conDetails.Id} data-field ='Phone' type="text" value={conDetails.Phone} label="Phone" onchange={handleChange}></lightning-input>
+                        </td>  
+                    </tr>
+                </table>
+            </div>
+</template>

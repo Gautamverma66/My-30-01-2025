@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="messageText" type="String" />
+    <lightning:messageChannel type="Demo__c" aura:id="myChannnel"/>
+    <lightning:card title="Aura Send Message" iconName="custom:custom30">
+        <div>
+            <p>Enter Your Message Here:</p>
+            <br/>
+            <lightning:input type="text" id="theMessage" aura:id="theMessage" value="{!v.messageText}" /><br/>
+            <lightning:button variant="brand" label="Publish" title="Publish" onclick="{!c.handleClick }" />
+          
+        </div>
+    </lightning:card>
+</aura:component>

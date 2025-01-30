@@ -1,0 +1,82 @@
+<template>
+    <div if:true={showSpinner}>
+        <lightning-spinner
+            alternative-text="Loading..." variant="brand" class="slds-is-fixed">
+        </lightning-spinner>
+    </div>
+    <div if:false={eCheckshow}>
+    <div  class="outerBox">
+        <p class="discripation" >Authorize Dot Net Payment by Credit Card</p>
+        <div class="innerBox1" >
+            <div class="innerBox2" >
+                <div class="innerBox3" >
+                   <p class="heading" >Authorize.Net</p>
+                   <p class="subheading" >A Visa Solution</p>
+                </div>
+                <div style="margin:10px;">
+                    <lightning-input name="cardNumber" type="text" label="Card Number" required onchange={handleChange} value={cardNumberShow} maxlength="19" minlength="15"></lightning-input>
+                </div>
+                <div class="comboboxContainer" >
+                    <div class="monthCombobox" >
+                        <lightning-combobox
+                        name="Month"
+                        label="Expiry Month"
+                        value={selectedMonth}
+                        placeholder={selectedMonth}
+                        options={monthOptions}
+                        onchange={handleChange}
+                        ></lightning-combobox>
+                    </div>
+                    <div class="yearCombobox" >
+                        <lightning-combobox
+                        name="Year"
+                        label="Expiry Year"
+                        value={selectedYear}
+                        placeholder={selectedYear}
+                        options={yearOptions}
+                        onchange={handleChange}
+                        ></lightning-combobox>
+                    </div>
+                    <div class="cvvNumber" >
+                        <lightning-input name="cvvNumber"  type="password" label="CVV Number"  maxlength="4" onchange={handleChange}></lightning-input>
+                    </div>
+                </div>
+                <div class="customButton" >
+                    <a style="color: white; padding-left:300px ; " onclick={handlePayment}>PLACE ORDER</a>
+                </div>
+                <div class="echeckPage">
+                    <p>To Pay using ECheck <a onclick={showECheckForm}>Click Here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div if:true={eCheckshow}>
+        <div  class="outerBox">
+            <p class="discripation" >Authorize Dot Net Payment by ECheck</p>
+            <div class="innerBox1" >
+                <div class="innerBox2" >
+                    <div class="innerBox3" >
+                       <p class="heading" >Authorize.Net</p>
+                       <p class="subheading" >A Visa Solution</p>
+                    </div>
+                    <div style="margin:10px;">
+                        <lightning-input name="RoutingNumber" type="text" label="Routing Number" required  maxlength="16" minlength="6" onchange={handleChangeECheck}></lightning-input>
+                    </div>
+                    <div style="margin:10px;">
+                        <lightning-input name="AccNumber" type="text" label="Account Number" required maxlength="16" minlength="5" onchange={handleChangeECheck}></lightning-input>
+                    </div>
+                    <div style="margin:10px;">
+                        <lightning-input name="AccountName" type="text" label="Name On Account"  maxlength="16" minlength="4" onchange={handleChangeECheck}></lightning-input>
+                    </div>
+                    <div class="customButton" >
+                        <a style="color: white; padding-left:300px ; " onclick={handlePaymentCheck}>PLACE ORDER</a>
+                    </div>
+                    <div class="echeckPage">
+                        <p>To Pay using Credit Card <a onclick={showCreditForm}>Click Here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,140 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="slds-p-around_x-large">
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+   <lightning-breadcrumbs class="slds-path slds-grid slds-path__track slds-grid slds-path__scroller-container slds-path__scroller slds-path__scroller_inner">
+       
+                            <template for:each={breadcrumbList} for:item="crumb" for:index="ind" >
+                               
+                                    <lightning-breadcrumb 
+                                        key={crumb.key}
+                                        label={crumb.value}
+                                        name={crumb.value}
+                                        data-index={ind}
+                                        data-p={crumb.key}
+                                        onclick={handleBreadcrumb}></lightning-breadcrumb>
+                                  
+                            </template>
+                    
+    </lightning-breadcrumbs> 
+   <table class="slds-table slds-table--bordered ">
+        <thead style="background-color:  #ABBAEA;height:30px;width:100%;" >
+            <td>
+                <div >Icons</div>
+            </td>
+            <td>
+                <div>Name</div>
+            </td>
+            <td>
+                <div>Delete</div>
+            </td>
+            <td>
+                <div>Download</div>
+            </td>
+        </thead>
+        <tbody>
+            <template for:each={nameField} for:item="d">
+                <tr key={d.path_display}>
+                    <template if:true={d.isFolder} >
+                            <td><lightning-icon icon-name='doctype:folder' alternative-text='folder' size='small' title='folder'></lightning-icon></td>
+                    </template>
+                    <template if:true={d.isFile} >
+                        <td><lightning-icon icon-name='standard:file' alternative-text='file' size='small' title='file'></lightning-icon></td>
+                    </template>
+                    <template if:true={d.isFolder}>
+                        <td>
+                            <a  data-path={d.path_display} data-name={d.name} onclick={inner}>
+                                {d.name} 
+                            </a>
+                            
+                        </td>
+                    </template>
+                    <template if:true={d.isFile}>
+                        <td>
+                            {d.name} 
+                        </td>
+                    </template>
+                    <td>
+                        <a  data-path={d.path_display} data-name={d.name} onclick={deleteF}>
+                            <lightning-icon icon-name='utility:delete' alternative-text='delete' size='small' title='delete'></lightning-icon>
+                        </a>
+                    </td>
+                    <td>
+                        <template if:true={d.isFile} >
+                            <a  data-path={d.path_display} data-name={d.name} onclick={downloadF}>
+                            <lightning-icon icon-name='utility:download' alternative-text='download' size='small' title='download'></lightning-icon>
+                            </a>
+                        </template>
+                    </td>
+                    <!-- <template if:true={d.isFolder} >
+                        <td></td>
+                    </template> -->
+                </tr>
+            </template>
+        </tbody>
+    </table>    
+    <div style="display: inline-block;">
+        <lightning-button variant="brand"
+        label="Upload File"
+        title="Upload File"
+        onclick={openModal}
+        class="slds-m-left_x-small">
+        </lightning-button>
+        <lightning-button variant="brand"
+        label="Create Folder"
+        title="Create Folder"
+        onclick={createModel}
+        class="slds-m-left_x-small">
+        </lightning-button>
+    </div>
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">PopUp</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <template if:true={isUpload} >
+                        <lightning-input type="file" 
+                        accept=".xlsx, .xls, .csv, .png, .doc, .docx, .pdf"
+                        label="Attachment" onchange={openfileUpload}></lightning-input>
+                    </template>
+                    <template if:true={isCreate}>
+                        <lightning-input 
+                        type="text" 
+                        data-id="NewFolder"
+                        name="Name" 
+                        label="FirstName">
+                        </lightning-input>
+                    </template>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <template if:true={isUpload}>
+                        <button class="slds-button slds-button_brand" onclick={handleClick} title="OK">OK</button>
+                    </template>
+                    <template if:true={isCreate}>
+                        <button class="slds-button slds-button_brand" onclick={createF} title="create">create</button>
+                    </template>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

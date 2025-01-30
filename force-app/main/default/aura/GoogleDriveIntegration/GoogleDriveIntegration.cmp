@@ -1,0 +1,128 @@
+<aura:component controller="GoogleIntegration" implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="driveFiles" type="List" />
+    <aura:attribute name="file" type="String"/>
+    <aura:attribute name="breadcrumbs" type="List" />
+    <aura:attribute name="isAuthorizing" type="boolean" />
+    <aura:attribute name="fileContent" type="String" />
+    <aura:attribute name="fileName" type="String" />
+    <aura:attribute name="showConfirmDialog" type="boolean" />
+    <aura:attribute name="inputValue" type="String" default=""/>
+    <aura:attribute name="delFileId" type="String" />
+    <aura:attribute name="showSpinner" type="boolean" />
+    <aura:handler name="init" value="{!this}" action="{!c.authorizeGoogleDrive}" />
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="slds-p-around_x-large">
+            <lightning:spinner alternative-text="Loading" size="large" variant="brand"></lightning:spinner>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!v.showConfirmDialog}">
+    <div class="slds-m-around_xx-large">         
+       
+            <!--Modal Box Start-->
+            <div role="dialog" class="slds-modal slds-fade-in-open ">
+                <div class="slds-modal__container">
+                    <!--Modal Box Header Start-->
+                    <header class="slds-modal__header">
+                        <h1 class="slds-text-heading--medium">Confirmation</h1>
+                    </header>
+                    <!--Modal Box Header End-->
+                     
+                    <!--Modal Box Content Start-->
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <center><b>Are you sure you want to delete this item?</b></center>
+                    </div>
+                    <!--Modal Box Content End-->
+                     
+                    <!--Modal Box Button Start-->
+                    <footer class="slds-modal__footer" >
+                        <lightning:button name='No' label='No' onclick='{!c.handleConfirmDialogNo}'/>
+                        <lightning:button variant="brand" name='Yes' label='Yes'  onclick='{!c.delfiles}'/>
+                    </footer>
+                    <!--Modal Box Button End-->
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>            
+       
+    </div>
+    </aura:if>
+    <div>
+        <aura:iteration items="{!v.breadcrumbs}" var="breadcrumb" indexVar="index">
+        <aura:if isTrue="{!index > 0}">
+            <span> > </span>
+        </aura:if>
+        <a onclick="{!c.openInsideFiles}" data-index="{!index}" data-name="{!breadcrumb.label}" data-id="{!breadcrumb.value}">{!breadcrumb.label}</a>
+        </aura:iteration>
+    </div><br/>
+    
+    <form class="NewFolder">
+
+        <lightning:input aura:id="FolderName" type="text" label="Folder Name" value="{!v.inputValue}"  style="width: 120px;  padding-left:10px; padding-bottom:5px; " ></lightning:input>
+        <lightning:button variant="brand" label="Create Folder" title="Create Folder" onclick="{!c.newFolderCreate}" class="slds-m-around_x-small" ></lightning:button>
+    </form><br/><br/>
+    
+    <div class="Tableouter">
+        <table class="Tableinner">
+            <thead>
+                <tr style="height: 50px;">
+                    
+                    <th style="width:50px;padding-left:8px;"></th>
+                    <th style="padding-left: 20px;width: 70%;" class="Foldername">Folder Name</th>
+                    <th style="width:5%; padding-right:80px;">Delete</th>
+                    <th >Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.driveFiles}" var="file">
+                    <aura:if isTrue="{!file.mimeType=='application/vnd.google-apps.folder'}">
+                    <tr class="rows">
+                        <td style="width:50px;padding-left:8px;"><lightning:icon iconName="doctype:folder" size="small" alternativeText="folder file" title="folder" /></td>
+                        <td style="padding-left: 20px;width: 70%;"> <a  onclick="{!c.openInsideFiles}" data-name="{!file.name}" data-id="{!file.id}">{!file.name}</a></td>
+                        <td style="width:5%; padding-right:80px;"> <a onclick="{!c.handleConfirmDialog}" data-id="{!file.id}" >
+                            <lightning:icon iconName="action:delete" size="small" alternativeText="delete file" title="del" /></a></td>
+                            <td></td>
+                        </tr>
+
+                    </aura:if>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <div class="Tableouter">
+        <table class="Tableinner">
+            <thead>
+                <tr>
+                    
+                    <th style="width:50px;padding-left:8px;" class="Icon"></th>
+                    <th style="padding-left: 20px;width: 70%;">File Name</th>
+                    <th style="width:5%; padding-right:80px;">Delete</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.driveFiles}" var="file">
+                    <aura:if isTrue="{!file.mimeType!='application/vnd.google-apps.folder'}">
+                    <tr style="height: 50px;">
+                        <td style="width:50px;padding-left:8px;"><lightning:icon iconName='standard:file' alternativeText='file' size='small' title='file'></lightning:icon></td>
+                        <td style="padding-left: 20px;width: 70%;"> <a href="{!file.webViewLink}" target="_blank">{!file.name}</a></td>
+                        <td style="width:5%; padding-right:80px;"><a onclick="{!c.handleConfirmDialog}" data-id="{!file.id}" >
+                            <lightning:icon iconName="action:delete" size="small" alternativeText="delete file" title="del" />
+                        </a></td>
+                        <td> <a href="{!file.webContentLink}"     >
+                            <lightning:icon iconName="action:download" size="small" alternativeText="download file" title="download" />
+                            </a></td>
+                           
+                    </tr>
+
+                    </aura:if>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <lightning:input type="file" label="Upload File" onchange="{!c.handleFileChange}" />
+    
+    <lightning:button label="Upload" onclick="{!c.uploadFile}" disabled="{!empty(v.fileContent)}" />
+
+
+</aura:component>

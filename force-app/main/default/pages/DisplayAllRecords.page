@@ -1,0 +1,29 @@
+<apex:page controller="AccountController" >
+    <apex:form id="details">
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!AccountRecords}" var="list"  >
+                <apex:column headerValue="Account Name" >
+                    <apex:inputField value="{!list.Name}" />
+                </apex:column>
+                <apex:column headerValue="Industry" >
+                    <apex:inputField value="{!list.Industry}" />
+                </apex:column>
+                <apex:column headerValue="Rating" >
+                    <apex:inputField value="{!list.Rating}" />
+                </apex:column>
+                <apex:column headerValue="Id" >
+                    <apex:outputField value="{!list.Id}" />
+                </apex:column>
+            </apex:pageBlockTable>
+           
+        </apex:pageBlockSection>
+         <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"   />
+             	<apex:commandButton action="{!quickSave}" value="Quick Save"  reRender="details" />
+             	<apex:commandButton action="{!del}" value="del" />
+         </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

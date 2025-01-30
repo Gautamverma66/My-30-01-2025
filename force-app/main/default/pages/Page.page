@@ -1,0 +1,85 @@
+<apex:page showHeader="false" sidebar="false" Controller="PageButton"  >
+    <apex:form >
+    <apex:pageBlock id="List">
+        Filter:
+            <apex:selectList value="{! filterId }" size="1" >
+                <apex:selectOptions value="{! dynamicList }" />
+                <apex:actionSupport event="onchange" action="{!filt}" reRender="List"/>
+            </apex:selectList>
+        
+        <apex:actionStatus id="pageStatus">
+            <apex:facet name="start">
+                <apex:outputPanel >
+                    <img src="/img/loading32.gif" width="25" height="25" />
+                    <apex:outputLabel value="Loading..."/>
+                </apex:outputPanel>            
+            </apex:facet>
+        </apex:actionStatus>
+        
+       <apex:pageBlockButtons location="top">
+            <apex:commandButton status="pageStatus" action="{! saveAndRedirect}" value="Save"  />
+            <apex:commandButton status="pageStatus" action="{! quickSave}" value="Quick save" reRender="List"  />
+            <apex:commandButton status="pageStatus" action="{! edit}" value="Edit" reRender="List"  />
+        </apex:pageBlockButtons>
+        <apex:pageBlockButtons location="bottom"  >
+            <apex:commandButton action="{! controller.first}" status="pageStatus" value="First" rendered="{!controller.hasPrevious}" reRender="List" />
+             <apex:commandButton action="{! controller.previous}"  status="pageStatus" value="previous"  rendered="{!controller.hasPrevious}" reRender="List" />
+             <apex:commandButton action="{! controller.next}" status="pageStatus" value="Next" rendered="{!controller.hasNext}" reRender="List" />
+             <apex:commandButton action="{! controller.last}" status="pageStatus" value="Last" rendered="{!controller.hasNext}" reRender="List" />
+         
+         </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection columns="1" title="Edit" rendered="{!b}" >
+            <apex:pageBlockTable value="{!Accou}" var="a">
+              <apex:column >
+                 <apex:inputField value="{!a.Name}"/>
+              </apex:column>
+              <apex:column >
+                 <apex:inputField value="{!a.Industry}"/>
+              </apex:column>
+              <apex:column >
+                 <apex:inputField value="{!a.Rating}"/>
+              </apex:column>
+              <apex:column >
+                 <apex:outputField value="{!a.Id}"/>
+              </apex:column>
+             </apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1" title="Read only" rendered="{!!b}"  >
+            <apex:pageBlockTable value="{!Accou}" var="a">
+              <apex:column >
+                 <apex:outputField value="{!a.Name}"/>
+              </apex:column>
+              <apex:column >
+                 <apex:outputField value="{!a.Industry}"/>
+              </apex:column>
+              <apex:column >
+                 <apex:outputField value="{!a.Rating}"/>
+              </apex:column>
+              <apex:column >
+                 <apex:outputField value="{!a.Id}"/>
+              </apex:column>
+             </apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        <!-- Pagination -->
+<table style="width: 100%"><tr>
+    <td>
+        Page: <apex:outputText value=" {!re} of {! CEILING(ResultSize / PageSize) }"/>
+    </td>
+    
+    <td align="right">
+       Records per page:
+<apex:selectList value="{! pageSize }" size="1">
+    <apex:selectOption itemValue="5"  itemLabel="5"/>
+    <apex:selectOption itemValue="20" itemLabel="20"/>
+    <apex:actionSupport event="onchange" action="{!you}"  reRender="List"/>
+</apex:selectList>
+    </td>
+</tr></table>
+            
+            
+    </apex:pageBlock>
+   </apex:form>
+</apex:page>

@@ -1,0 +1,114 @@
+<template>
+    <h1 style="font-weight: bold;">Select Object </h1>
+    <template if:true={isLoading}>
+        <div class="slds-p-around_x-large">
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+    <select onchange={handleObjectChange} >
+        <template for:each={objectList} for:item="obj">
+            <option key={obj.key} value={obj.key}>{obj.value}</option>
+        </template>
+    </select>
+
+    <template lwc:if={fieldBOxShow}>
+    <lightning-dual-listbox
+                label="Select Fields"
+                source-label="Available Values"
+                selected-label="Selected Values"
+                options={fields}
+                value={selectedValue}
+                onchange={handleSelectedValuesChange}
+     style="width: 60%;"></lightning-dual-listbox><br/>
+
+    <lightning-button variant="brand" label="Process" title="Primary action" onclick={handleChild} class="slds-m-left_x-small"></lightning-button><hr/>
+    </template>
+    <template lwc:if={dataTableShow}>
+    <lightning-card>
+   
+        <div >
+            <lightning-icon style="margin-left:20px ;margin-bottom:10px;margin-right:10px;" icon-name="custom:custom15" title="custom11"></lightning-icon>
+            <h1 style="display: inline-block; font-weight: bold;">{selectedObjLabelName}</h1>
+            <div style="display: inline-block; width:15%; margin-left:75%;">
+            <lightning-input type="search" placeholder=" search by Name"  onblur={search} ></lightning-input>
+        </div>
+        <div if:false={recordtableDisable}>
+            <h1 style="font-weight: bold; color:red;border-color: black;margin-left:50px;"> NO Records Available !</h1>
+        </div>
+        </div>
+        <div if:true={recordtableDisable} style="overflow:scroll; height:350px"  class="slds-card__body slds-card__body_inner">
+            <table  class="slds-table slds-table_bordered slds-table_cell-buffer slds-var-m-bottom_large"> 
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th  scope="col">
+                            <div class="slds-truncate">
+                                <lightning-input onchange={handleAllSelected} type="checkbox"
+                                    data-key="allCheckbox">
+                                </lightning-input>
+                            </div>
+                        </th>
+                        <template for:each={columnList} for:item="column">
+                            
+                            <th key={column.value} ><div style="display: inline-block;" class="slds-truncate"><a data-id={column.value} onclick={sortRecord} >{column.label}</a></div>
+                                
+                                    <div style="display: inline-block; padding-left:5px;" if:true={isAsc}>
+                                        &#9650;
+                                    </div>
+                                    <div style="display: inline-block;padding-left:5px;" if:true={isDsc}>
+                                        &#9660;
+                                    </div>
+                                
+                            </th> 
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    <template for:each={recordsOnPage} for:item="row" for:index="index">
+                        <tr class="inputRows" key={row.Id}>
+                            <td scope="col">
+                                <div>
+                                    <lightning-input type="checkbox" value={row.Id} data-id={row.Id}
+                                        data-key="rowCheckbox" onchange={handleCheckboxSelect}
+                                        name={row.Id}>
+                                    </lightning-input>
+                                </div>
+                            </td>
+                            <template for:each={columnList} for:item="column">
+                                <td key={column.value}>
+                                   <c-child-Client-Side-Pagination record-id={row.Id} record={row} field={column.value} ></c-child-Client-Side-Pagination> 
+                                </td>
+                            </template>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+        <div class="slds-p-around_small slds-grid slds-grid_align-spread slds-grid_vertical-align-start">
+            <div class="slds-float_left"  >
+                <div style="width: 40%;">
+                    <select onchange={recordPerPageShow} >
+                        <template for:each={recordSize} for:item="size">
+                            <option key={size} value={size}>{size}</option>
+                        </template>
+                    </select>
+                    <br/>
+                </div>
+            </div>
+            <div class="inline-container" >
+                <lightning-button variant="brand" label="first" title="Primary action" onclick={firstButton} class="slds-m-left_x-small" disabled={firstbuttonDisable}></lightning-button>
+                <template for:each={pageNO} for:item="page">
+                    <lightning-button  key={page.value} value={page.value}  label={page.value} title="Primary action" onclick={buttonClick} disabled={page.label} class="slds-m-left_x-small"></lightning-button>
+                </template>
+                <lightning-button variant="brand" label="last" title="Primary action" onclick={lastButton} class="slds-m-left_x-small" disabled={lastbuttonDisable}></lightning-button>
+            </div>
+            <div id="stats">
+                <span class="slds-text-heading_small">
+                    Page {currentPageNo} | {totalPages}
+                </span>
+            </div>
+        </div>      
+
+    </lightning-card>
+</template>
+</template>

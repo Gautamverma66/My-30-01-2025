@@ -1,0 +1,187 @@
+<apex:page controller="AllotmentLetterController" renderAs="pdf" applyHtmlTag="false" showHeader="false" applyBodyTag="false" >
+    <head>
+        <style type="text/css">
+        @page{
+            size: A4;
+            margin-left: 80px;
+            margin-bottom: 50px;
+            margin-top: 100px;
+           
+                @bottom-center{
+                    content: element(footer)+'Page 'counter(page);
+                   font-size: 10px;
+                }
+                @top-center {
+                    
+                    content: element(header);
+                    
+                }
+                
+        }
+        div.footer{
+                    position : running(footer);
+                    font-size: 11px;
+                }
+        div.header {
+                    position: running(header);
+        }
+        body{
+            font-size: 14px;
+        }
+        th {  
+            font-weight: bold;
+            text-align: center;
+            background-color: #91c8e5;
+            color: black;
+            padding: 8px;
+        }
+        td {    
+            font-size: 15px;
+            text-align: left;
+            padding: 8px;
+        }
+        table{
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        </style>
+    </head>
+    <div class="header">
+        <img src="C:\Users\Briskminds\OneDrive\Pictures\Screenshots\letterimg.png" width="700" height="50"/>
+    </div>
+    <div class="footer" >
+        <div style="text-align:center" align="justify">Yoo One project is registered with MahaRERA vide Registration No.: RE85642159 granted permission for the plot No. ABCDEF on 25-Dec-2017 and is available on: https://maharera.mahaonIine.gov.in</div>
+   </div>
+    <apex:form >
+       
+        <body>
+            <div >
+                <p align="justify">To,</p>
+                <p>Mr. Bhavin  Patel Test</p>
+                <p>R/o,,,,</p>
+                <p>Telephone/Mobile Number : 9898269462</p>
+                <p>Aadhar Card No.</p>
+                <p>PAN Card No.:1234567890</p>
+                <p>Email ID:amrit@cloudsteer.com</p>
+                <p align="justify" ><b>SUBJECT :</b>Your Request for allotment of Flat/Unit 301 in project known as "Yoo One Phase -1",having MahaRERA Registration No. RE85642159 granted permission for the plot No. ABCDEF on 25-Dec-2017.</P>
+                <p style="font-weight: bold">Sir/Madam,</p>
+                <h4>1. Allotment of the said Flat/Unit</h4>
+                <p align="justify">This has reference to your request referred at the above subject. In that regard, we have the pleasure to inform that you have been allotted below mentioned Flat/ Unit, in the Project known as “Yoo One Phase -1”, having MahaRERA Registration No. RE85642159 granted permission for the plot No. ABCDEF on 25-Dec-2017, hereinafter referred to as “the said Flat/ Unit” .</p>
+                
+                    <ol style="list-style-type:lower-alpha;">
+                        <li>Flat / Unit Type - 3 BR</li>
+                        <li>Bearing. Flat/ Unit No.-- 301</li>
+                        <li>Admeasuring RERA Carpet area 100.00 Sq. Mtrs. equivalent to 1600.00 Sq. Ft.</li>
+                        <li>Situated on 0.0th Floor of Building / Tower / Block / Wing -</li>
+                        <li>Being developed on land bearing Survey No(s) 26</li>
+                        <li>Hissa No(s) 4</li>
+                        <li align="justify">Lying and being at Survey No 26/4, NIBM-Undri Road Village Kondhwa Khurd Taluka Haveli ,Dist. Pune, Pin Code 411048 admeasuring 27255.37Sq. Mtrs.</li>
+                    </ol>
+                
+                <h4>2.Allotment of Parking Space(s):</h4>
+                <p align="justify">Further we have the pleasure to inform you that you have been allotted along with the said flat/ unit, garage(s) :</p>
+                <ol style="list-style-type:lower-alpha;">
+                    <li>Bearing No(s) Or Number of Car Parking spaces -</li>
+                    <li>Admeasuring 25 Sq. Mtrs. equivalent to 269.10 Sq. Ft.</li>
+                    <li>Parking Type –</li>
+                </ol>
+                <p align="justify">Above is on the terms and conditions as shall be enumerated in the Agreement for Sale to be entered into between ourselves and yourselves.</p>
+                <h4>3.Cost of the Flat / Unit:</h4>
+                <p align="justify">All above at a total sale consideration of Rs. 12000000.00/- (Rupees. One Crore Twenty Lakh Only) exclusive of GST, Stamp Duty and registration Charges.</p>
+                <h4 >4.Receipt of Part Consideration:</h4>
+                <ol style="list-style-type: lower-roman;">
+                    <li>We confirm to have received from you an amount of Rs. 6700000.00/- (Rupees Sixty Seven Lakh Only) being not more than 10% of the total consideration value of the said flat/unit towards the final booking of the said flat/Unit on 23/01/2023 through various mode of payments</li>
+                    <li>The remaining amount of Rs. 5300000.00/- (Rupees. Fifty Three Lakh Only) will be payable to the promoter as per the progress of the construction in accordance with the ‘Cost Sheet and Payment Schedule’ as specified hereunder.</li>
+                </ol>
+                <h4>5.Taxes:</h4>
+                <ol style="list-style-type: lower-roman;">
+                    <li>Goods and Service Tax (GST) at 5% on sale consideration and other charges.</li>
+                    <li>Any other statutory payment that may become applicable for sale and transfer of said ‘Flat/ Unit’</li>
+                </ol>
+                <h4>6.Stamp Duty and Registration Charges:</h4>
+                <p align="justify">In addition to the aforesaid consideration you shall be liable to pay Stamp Duty and Registration Charges as may be applicable under the Maharashtra Stamp Duty Act, 1958. The Registration charges and stamp duty will have to be paid at the time of execution and registration of Agreement for Sale in respect of the said ‘Flat/ Unit’ (hereinafter referred to as ‘Agreement’), as per the provisions of The Maharashtra Ownership Flats(Regulation of the Promotion of Construction, Sale Management Transfer) Act, 1963 (MOFA) and/or The Real Estate(Regulation And Development)Act, 2016(RERA).</p>
+                <h4>7.Other Terms and Conditions for Allotment:</h4>
+                <ol style="list-style-type: lower-roman;">
+                    <li align="justify">You have seen all the documents of title deeds and other relevant papers etc, pertaining to the said property and are fully satisfed about our title, rights, approvals and interest in respect of the said project.</li>
+                    <li align="justify">You will be bound by the terms and conditions as stated in the said ‘Agreement’ to be executed by you. You will have to pay necessary stamp duty and registration charges and register said ‘Agreement’. You have seen and are aware of the standard format of ‘Agreement’ as required under provision of RERA to be executed between you and us and have accepted the terms and condition contained therein.</li>
+                    <li align="justify">Please take note, it is mandatory to execute and register said ‘Agreement’ on or before payment of 10% of the total sale consideration as stated hereinabove under RERA. Registration of the said ‘Agreement’ will be your responsibility. We will not be responsible for any delay in registration of said ‘Agreement’ and any consequence arising under/RERA.</li>
+                </ol>
+                <h4>8.Disclosures of Information:</h4>
+                <p align="justify">We have made available to you the following information namely:</p>
+                <ol style="list-style-type: lower-roman;">
+                    <li align="justify">The sanctioned plans, layout plans, along with specifications, approved by the competent authority are displayed at the project site and has also been uploaded on MahaRERA website.</li>
+                    <li align="justify">The stage wise time schedule of completion of the project, including the provisions for civic infrastructure like water, sanitation and electricity is as stated in Annexure- A attached herewith</li>
+                    <li align="justify">The said project has been registered with MahaRERA bearing Registration No. RE85642159 granted permission for the plot No. ABCDEF on 25-Dec-2017 </li>
+                    <li align="justify">The website address of MahaRERA is http://Maharera.mahaonline.gov.in</li>
+                </ol>
+                <h4>Encumbrances:</h4>
+                <p align="justify">We have created the following encumbrance(s) attached with caveats as enumerated hereunder on the said flat/ unit</p>
+                <ol style="list-style-type:lower-alpha;">
+                    <li align="justify">Aditya Birla Finance Limited (Details of Banks/ Financial Institutions)</li>
+                </ol>
+                <h4>10.Further payments:</h4>
+                <p align="justify">Further payments towards the consideration of the said flat / unit as well as of the garage(s)/covered car parking space(s) shall be made by you, in the manner and at the times as well as on the terms and conditions as more specifically enumerated / stated in the Agreement for Sale to be entered into between ourselves and yourselves.</p>
+                <h4>11.Possession:</h4>
+                <p align="justify">The said flat/ unit along with the garage(s)/covered car parking spaces(s) shall be handed over to you on or before 31st Dec. 2025 + 6 months of grace subject to the payment of the consideration amount of the said flat/ unit as well as of the garage(s)/covered car parking space(s) in the manner and at the times as well as per the terms and conditions as more specifically enumerated/ stated in the Agreement for Sale to be entered into between ourselves and yourselves.</p>
+                <h4>12.Interest Payment:</h4>
+                <p align="justify">In case of delay in making any payments, you shall be liable to pay interest at the rate which shall be the State Bank of India highest Marginal Cost of Lending Rate plus 2% (two percent).</p>
+                <h4>13.Cancellation of Allotment:</h4>
+                <ol style="list-style-type: lower-roman;">
+                    <li  align="justify">In case you desire to cancel the booking an amount mentioned in the Table hereunder written would be deducted and the balance amount due and payable shall be refunded to you without interest within 45 days from the date of receipt of your letter requesting to cancel the said booking.
+                    
+                    <table width="100%">    
+                        <tr >
+                            <th><b>Sr.No.</b></th>    
+                            <th><b>If the letter requesting to cancel the booking is received</b></th>
+                            <th><b>Amount to be deducted</b></th> 
+                        </tr>    
+                    
+                        <tr>                
+                            <td>1</td>    
+                            <td>Within 15 days from issuance of allotment letter</td>
+                            <td>Nil</td>    
+                        </tr>
+                        <tr>                
+                            <td>2</td>    
+                            <td>Within 16 to 30 days from issuance of allotment letter</td>
+                            <td>1% of the cost of the said flat/ unit</td>    
+                        </tr>
+                        <tr>                
+                            <td>3</td>    
+                            <td>Within 16 to 30 days from issuance of allotment letter</td>
+                            <td>1.5% of the cost of the said flat/ unit</td>    
+                        </tr>  
+                        <tr>                
+                            <td>4</td>    
+                            <td>After 61 days from issuance of allotment letter</td>
+                            <td>2% of the cost of the said flat/ unit</td>    
+                        </tr>        
+                         
+                    </table> 
+
+                    <p align="justify"><b>*The amount deducted shall not exceed the amount as mentioned in the table above.</b></p>  
+                    </li>
+                    <li align="justify">In the event the amount due and payable referred in Clause 13 (i) above is not refunded within 45 days from the date of receipt of your letter requesting to cancel the said booking, you shall be entitled to receive the balance amount with interest calculated at the rate which shall be the State Bank of India highest Marginal Cost of Lending Rate plus two percent.</li>
+                </ol>
+                <h4>14.Other Payments:</h4>
+                <p align="justify">You shall make the payment of GST, Stamp Duty and Registration Charges, as applicable and such other payments as more specifically mentioned in the agreement for sale, the proforma whereof is enclosed herewith.</p>
+                <h4>15.Proforma of the Agreement for Sale and Binding Effect:</h4>
+                <p align="justify">The proforma of the Agreement for Sale to be entered into between ourselves and yourselves is enclosed herewith for your ready reference. Forwarding the proforma of the agreement for sale does not create a binding obligation on the part of ourselves and yourselves.</p>
+                <h4>16.Execution and registration of the Agreement for Sale:</h4>
+                <ol style="list-style-type: lower-roman;">
+                    <li align="justify">You shall execute the Agreement for Sale and appear for registration of the same before the concerned Sub-Registrar within a period of 2 months from the date of issuance of this allotment letter or within such period as may be communicated to you. The said period of 2 months can be further extended on our mutual understanding</li>
+                    <li align="justify">If you fail to execute the Agreement for Sale and appear for registration of the same before the concerned Sub-Registrar within the stipulated period of 2 months from the date of issuance of this allotment letter or within such period as may be communicated to you, we shall be entitled to serve upon you a notice calling upon you to execute the agreement for sale and appear for registration of the same within 15 (Fifteen) days, which if not complied, we shall be entitled to cancel this allotment letter and further we shall be entitled to forfeit an amount not exceeding 2% of the cost of the said flat/ unit and the balance amount if any due and payable shall be refunded without interest within 45 days from the date of expiry of the notice period.</li>
+                    <li align="justify">In the event the balance amount due and payable referred in Clause 13 (ii) above is not refunded within 45 days from the date of expiry of the notice period, you shall be entitled to receive the balance amount with interest calculated at the rate which shall be the State Bank of India highest Marginal Cost of Lending Rate plus 2% (two percent).</li>
+                </ol>
+                <h4>17.Validity of Allotment Letter:</h4>
+                <p align="justify">This allotment letter shall not be construed to limit your rights and interest upon execution and registration of the Agreement for Sale between ourselves and yourselves. Cancellation of allotment of the said flat / unit thereafter shall be covered by the terms and conditions of the said registered agreement for sale</p>
+                <h4>18.Headings:</h4>
+                <p align="justify">Headings are inserted for convenience only and shall not affect the construction of the various clauses of this allotment letter.</p>
+
+            </div>
+        </body>
+    </apex:form>
+</apex:page>

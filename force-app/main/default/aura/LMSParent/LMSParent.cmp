@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <p align="center"><b style="background-color: rgb(92, 16, 243);">LMS Demo</b></p>
+    <br/>
+    <br/>
+    <c:lMSTesting aura:id="LMSTesting"></c:lMSTesting>
+    <br/>
+    <br/>
+    <c:DemoLMSAura aura:id="DemoLMSAura"></c:DemoLMSAura>
+    <br/>
+    <br/>
+    <c:DemoLMSAura1 aura:id="DemoLMSAura1"></c:DemoLMSAura1>
+    <br/>
+    <br/>
+    <c:lMSTesting1 aura:id="LMSTesting1"></c:lMSTesting1> 
+</aura:component>

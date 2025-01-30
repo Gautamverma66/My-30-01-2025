@@ -1,0 +1,619 @@
+<apex:page renderAs="pdf" applyHtmlTag="false" showHeader="false" applyBodyTag="false" controller="PlotBuyersArgreementController">
+    <head>
+        <style type="text/css">
+        @page{
+            size: A4;
+            @top-left{
+                padding-top: 40px;
+                padding-left: 40px;
+                content: element(header)"Plot No- T066";
+            }
+            @top-center{
+                padding-top: 40px;
+
+                content: element(header);
+            }
+            @top-right{
+                padding-top: 40px;
+                padding-left: 250px;
+                content: element(header);
+            }
+            @bottom-left{
+                padding-left: 40px;
+                padding-bottom: 40px;
+                content: "(Developers)";
+            }
+            @bottom-right{
+                padding-right: 40px;
+                padding-bottom: 40px;
+                content: "(Allottee)";
+            }
+            @bottom-center{
+                color: rgb(73, 73, 241);
+                padding-bottom: 40px;
+                content: 'Page 'counter(page)' of 'counter(pages);
+            }
+       
+        }
+        div.header {   
+            position: running(header);
+        }
+        .WHEREAS{
+            width: 100%;
+            font-size: 13px;
+        }
+      
+
+       
+        </style>
+    </head>
+    <apex:form >
+        <div class="header" >
+            <img style="height:40px; width40px" src="{!$Resource.BMLogo}" />
+        </div>
+        <body>
+            <div >
+                <p align="center" style="padding-top:80px; "><b>PLOT BUYER’S AGREEMENT</b></p>
+                <p align="center" style="padding-top:100px; "><b>“AIPL DREAMCITY LUDHIANA (Formerly Known as IREO Waterfront)”</b></p>
+                <p align="center" style="padding-top:10px;  "><b>SIDHWAN CANAL ROAD</b></p>
+                <p align="center" style="padding-top:0;"><b>LUDHIANA</b></p>
+                <p align="center" style="padding-top:10px;">Appliction Booking amount{!pliRec.Application_Booking__r.Amount_App_Booking__c}</p>
+                
+                <p style="page-break-before: always"></p>
+            </div>
+            <div style="margin-left:33px; margin-top:100px;">
+                <p><b>Please go through the following conditions carefully:</b></p>
+                <p align="justify">It is specifically clarified to the Allottee(s) that the proposal for sale of the said Plot in ‘AIPL Dreamcity Ludhiana’ formerly known as “IREO Waterfront”, is subject to the unique set of conditions set out in this Agreement. By signing this Agreement, the Allottee(s) would be deemed to have read over,understood and accepted this Agreement in its entirety.</p>
+                <p align="justify">The Promoter shall be entitled to reject and refuse to execute any Agreement wherein the Allottee(s) has made any corrections/cancellations/alterations/modifications, etc., to this Agreement.</p>
+                <p><b>Important guidelines for execution of this Agreement:</b></p> 
+                <table width="100%">    
+                    <tr  >
+                        <th style="width:5%"> </th>    
+                        <th style="width:95%"> </th>
+                    </tr>    
+                
+                    <tr>                
+                        <td style="vertical-align: top;" >1)</td>    
+                        <td align="justify">Kindly sign along with joint Allottee(s), if any, at all places marked (x) in this Agreement including all annexures.</td>   
+                    </tr>
+                    <tr>                
+                        <td style="vertical-align: top;">2)</td>    
+                        <td align="justify">Kindly paste your coloured passport size photograph at the space provided including that of joint Allottee(s) and sign across the photograph.</td>   
+                    </tr>
+                    <tr>                
+                        <td style="vertical-align: top;">3)</td>    
+                        <td align="justify">Both the signed copies of this Agreement along with annexures shall be returned to the Promoter preferably by registered post/hand delivery within the stipulated period of <span style="color:red">30 days</span> from the intimation by the Promoter.</td>  
+                    </tr>           
+                </table> 
+                <p style="page-break-before: always"></p>
+            </div>
+            <div style="margin-top:60px;">
+                <p align="center"><b>“AIPL Dreamcity Ludhiana” (Formerly Known as IREO Waterfront)</b></p>
+                <p align="center"><b>PLOT BUYER’S AGREEMENT</b></p>
+                <div style="margin-left:33px;padding-top:20px;">
+                    <div style="display: inline-block;border:1px solid black; height:200px;width:170px;">
+                        <p align="center" style="padding-top:40px;"><b>Paste Passport Size Photograph and sign Across its face.</b></p>
+                    </div>
+                    <div style="display: inline-block;border:1px solid black; height:200px;width:170px;margin-left:50px;">
+                        <p align="center" style="padding-top:40px;"><b>Paste Passport Size Photograph and sign Across its face.</b></p>
+                    </div>
+                    <div style="display: inline-block;border:1px solid black; height:200px;width:170px;margin-left:50px;">
+                        <p align="center" style="padding-top:40px;"><b>Paste Passport Size Photograph and sign Across its face.</b></p>
+                    </div>
+                </div>
+                <div style="margin-left:33px;">
+                    <div style="display: inline-block;width:170px;">
+                        <p align="center" ><b>Allottee No.1</b></p>
+                    </div>
+                    <div style="display: inline-block;width:170px;margin-left:50px;">
+                        <p align="center"><b>Allottee No.2</b></p>
+                    </div>
+                    <div style="display: inline-block;width:170px;margin-left:50px;">
+                        <p align="center"><b>Allottee No.3</b></p>
+                        
+                    </div>
+                </div>
+                <div style="margin-left:33px;" >
+                    <p align="justify"><b>THIS PLOT BUYER’S AGREEMENT (“Agreement”)</b> is made and executed on this the ______ day of ________________, 20__ at Ludhiana, Punjab, India</p>
+                    <p align="center"><b>BETWEEN</b></p>
+                    <p align="justify"><b>M/s. IREO Waterfront Pvt. Ltd. (“IWF”),</b> (CIN No. U70100DL2006FTC146233), a company incorporated under the Companies Act 1956 (an IREO Group Company) having its Registered Office at C-4, 1st Floor Malviya Nagar New Delhi South Delhi -110017, India and present Office at Sidhwan Canal Road, Off. Ferozepur Road, Village Dewatwal, Ludhiana, Punjab (India) through its duly constituted Attorney AIPL Housing and Urban Infrastructure Limited authorized vide GPA dated 31.07.2021, duly registered vide document No. 2021-22/104/4/129 dt. 18.10.2021 acting through , its authorized signatory________________ duly authorized vide Bord Resolution dated _________________________ AND <b>AIPL HOUSING AND URBAN INFRASTRUCTURE LIMITED (“AIPL”),</b> a company incorporated and registered under the provisions of the Companies Act, 2013, bearing corporate identification number (CIN) U70109HR2006PLC080237 having its registered office at AIPL Business Club, Fifth Floor, Golf Course Extension Road, Sector- 62, Gurugram -122101, Haryana, acting through its duly empowered and authorized signatory, Mr_______, authorized in pursuance of the Board Resolution dated _________________, (hereinafter IWF AND AIPL are collectively referred to as <b>“Promoter”</b>, which expression shall, unless repugnant to the context thereof, be deemed to mean and include its successors-in-interest, administrators, executors, authorized representatives and assigns) of the <b>FIRST PART;</b></p>
+                    <p align="center">AND</p>
+                    <p style="page-break-before: always"></p>
+                    
+                </div>
+                   
+                
+            </div>
+            <div style="margin-left:33px;margin-top:60px;">
+                <p align="justify"><b>Mr. {!pliRec.Application_Booking__r.Contact__r.Name}</b>, aged about ____, (PAN No. <b>{!pliRec.Application_Booking__r.Contact__r.Pan_No__c}</b>), (Aadhaar No. <b>{!pliRec.Application_Booking__r.Contact__r.Aadhar_No__c}</b>), S/D/W <b>Mr. {!appDetailsRec[0].Name}</b>, Resident of _____________________________________, and ,<b>Mr.{!appDetailsRec[1].Name}</b> aged about , (PAN No. __________________), (Aadhaar No. ________________), S/D/W  <b>Mr.</b> _________________________, Resident of __________________________, (hereinafter jointly or individually, as the case may <b>be</b>, referred to as the <b>“Allottee”</b>, which expression shall unless repugnant to the context thereof, be deemed to mean and include its successors, legal heirs, executors, administrators, representatives, transferees and permitted assigns) of the <b>SECOND PART;</b></p>
+                <p align="justify"><b>M/S.</b>  ______________________ Con, (CIN No. ________________________), a company incorporated under the company act ,1956 , having its registered office at at ________________________________________, (PAN No. _________________) acting through its duly Authorized Signatory ____________________(Aadhaar No : ​____ ____ ____) authorized vide Board Resolution dated _____________ (hereinafter referred to as the <b>"Allottee"</b> which expression shall, unless repugnant to the context or meaning thereof, include its successors, authorized representatives and assigns) of the <b>SECOND PART;</b></p>
+                <p align="justify">(The above-mentioned parties to this Agreement shall also be collectively referred to as the “Parties” and individually as the “Party”).</p>
+                <p><b>WHEREAS:</b></p>
+                <table class="WHEREAS" >    
+                    <tr style="padding-top:10px;">
+                        <th style="width:5%"> </th>    
+                        <th style="width:95%"> </th>
+                    </tr>    
+                
+                    <tr style="padding-top:10px;">                
+                        <td style="vertical-align: top;">A.</td>    
+                        <td align="justify">IWF had entered into an agreement with the Government of Punjab and obtained requisite approvals to develop a Mega Housing on about 500 acres of land situated in Village Dakha I &amp; II, Gahour, Dewatwal, Eisewal &amp; Birmi, Sub Tehsil Mullanpur Dhaka, District Ludhiana Punjab, under the Industrial Policy 2003, vide Letter of Intent bearing No. CC/JDIP/Mega/IREO/6249 and 6250 dated 30.09.2005. Pursuant thereto, IWF had applied for change in land use of 493.95 acres of land, which was approved vide Letter No 6274-CTP(Pb) SP-432(L) dated 23.11.2007, Letter No 3975-CTP(Pb) SP-432(L) dated 21.05.2009, Letter No 94-CTP(Pb) SP-432(L) dated 8.1.2010, Letter No 6379-CTP(Pb) SP-432(L) dated 20.08.2010, Letter No 3619-CTP(Pb) SP-432(L) dated 24.05.2011,Letter No 8196-CTP(Pb) SP-432(L) dated 21.12.2011, Letter No 6708-CTP(Pb) SP-432(L) dated 10.12.2012, Letter No 1721- CTP(Pb) SP- 432(L) dated 25.03.2013, Letter No 4947-CTP(Pb) SP-432(L) dated 06.09.2013. Out of the aforesaid CLU approved land, IWF has received approval of layout plan of 394.41 acres land for development of the township project known as <b>‘IREO Waterfront’</b>, approved by Chief Town Planner, Chandigarh/ the competent authority on 28.11.2017 vide Memo No. 6193- CTP (Pb)/MPL-45 dated 28.11.2017 and exemption has been granted under Section 44(2) of the Punjab Apartment and Property Regulation Act, 1995.</td>   
+                    </tr>
+                    <tr >                
+                        <td  style="padding-top:10px;vertical-align: top;">B.</td>    
+                        <td align="justify" style="padding-top:10px;">An area of land admeasuring 308.80 acres, forming part of layout approved land, has been registered under the provisions of the Real Estate (Regulation and Development) Act, 2016 read with the Punjab State Real Estate (Regulation and Development) Rules, 2017 (hereinafter referred to as the “RERA Act”) with the Punjab Real Estate Regulatory Authority (hereinafter referred to as “Punjab RERA”) in a phase-wise manner.</td>   
+                    </tr>
+                    <tr>                
+                        <td   style="padding-top:10px;vertical-align: top;">C.</td>    
+                        <td align="justify" style="padding-top:10px;">Further thereto, an Asset Management Contract (‘AMC’) has been executed between IWF and AIPL on 31.07.2021 which has been duly registered with the office of concerned sub registrar on 18/OCT/2021, under which AIPL has agreed to provide the “Asset Management Services” including but not limited to managing and supervising the construction, development, maintenance, marketing, leasing, leave and licensing and sale of the project and other services in terms of the AMC and shall ensure completion of the project “AIPL Dreamcity Ludhiana” earlier known as “IREO Waterfront” (hereafter referred to as the &quot;Project&quot;). Pursuant to the execution of the AMC, AIPL has been registered as the co-promoter of the Project and revised RERA registration for the pockets have been obtained.</td>  
+                    </tr>    
+                    <tr>                
+                        <td  style="padding-top:10px;vertical-align: top;">D.</td>    
+                        <td  style="padding-top:10px;" align="justify">As a part of its integrated development of the Project, the Promoter shall also inter alia layout a plotted colony consisting of developed plots (hereinafter referred to as “Plots”) in accordance with the zoning plans to be sanctioned by the Competent Authority.</td>  
+                    </tr> 
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;">E.</td>    
+                        <td style="padding-top:10px;" align="justify">The Promoter is fully competent, authorized and has all the necessary approvals, consents and  permissions to undertake the marketing, sale and administration of all Plots in the Project.</td>  
+                    </tr> 
+                    <tr style="page-break-before: always"></tr>
+                    <tr >                
+                        <td style="padding-top:60px;vertical-align: top;">F.</td>    
+                        <td style="padding-top:60px;" align="justify">The Promoter has registered the Pocket- <b>Not Registered</b> of Phase <b>Phase-4A - West Lake Commons</b> of the Project under the provisions of the Act with the Punjab State Real Estate Regulatory Authority at Chandigarh, India.</td>  
+                    </tr> 
+                    
+                    <tr >                
+                        <td style="padding-top:10px;vertical-align: top;">G.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee has demanded from the Promoter and the Promoter has allowed the Allottee to inspect tentative layout plans, ownership records of the said Land, various approvals granted by the Government of Punjab and other relevant authorities in favour of the Promoter to develop and construct the Project and sell Plots. The Allottee has agreed that it is fully satisfied in all respects, with regard to the right, title and interest of the Promoter in the said Land and with regard to the existence of the necessary approvals prior to signing of this Agreement and there shall be no further reinvestigation/objections by it in this regard. Furthermore, the Allottee understands that by executing this Agreement, it would be deemed that the Allottee has completed its due diligence to its entire satisfaction.</td>  
+                    </tr> 
+                    <tr >                
+                        <td style="padding-top:10px;vertical-align: top;">H.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee has investigated various options of dwelling units available from various developers as well as in resale in Ludhiana and more specifically amongst the various options for such products in the local vicinity of the Project. After consideration of all aspects, including the terms and conditions on which the various products are being offered, the Allottee has chosen to invest in the Project, and has approached the Promoter voluntarily on his own accord.</td>  
+                    </tr> 
+                    <tr >                
+                        <td style="padding-top:10px;vertical-align: top;" >I.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee, after fully satisfying itself with respect to the right, title and interest of the Promoter in the said Land on which the Project is being developed, as well as the approvals and sanctions therefor, has applied to the Promoter vide application dated 17/Aug/2022 (“Application”) for allotment of Plot No._____ admeasuring ______ sq. mts (_______ sq.yds.) or thereabouts approx., (hereinafter referred to as the said “Plot”).</td>  
+                    </tr>   
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;">J.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee has been made aware that the Promoter is still in the process of developing the Project on the said Land, and in pursuance thereof it is understood and agreed by the Allottee that the location, size, dimension of said Plot is tentative and subject to increase/decrease, be modified or revised or changed from time to time during the course of laying out the residential colony and its completion.</td>  
+                    </tr>   
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;">K.</td>    
+                        <td style="padding-top:10px;" align="justify">The Site Plan of the said Plot is annexed herewith as Annexure-I. It is specifically clarified by the Promoter and accepted by the Allottee that the Site Plan of the Plot depicted herein as Annexure-I is tentative.</td>  
+                    </tr>
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;">L.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee is aware that the Project wherein the said Plot is situated derives its landmark image and exclusive appeal from the unique value added services/ amenities being installed in the Project by the Promoter and proper efficacy thereof requires consistent adherence to excellent standards of maintenance thereof and as such, the proper up-keep and maintenance thereof is an inseparable aspect of such image and appeal. Towards this end, the Allottee is willing to execute the Maintenance Agreement for the Project with the Maintenance Service Agency (“MSA”) as may be identified and designated by the Promoter in the standard format prescribed by the Promoter.</td>  
+                    </tr>
+                    <tr >                
+                        <td style="padding-top:10px;vertical-align: top; " >M.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee acknowledges that the Promoter has readily provided complete information and clarifications as required by the Allottee, however the Allottee has ultimately relied upon its own independent investigations and judgement, and save and except as specifically represented in this Agreement, the Allottee’s decision to purchase the said Plot is not influenced by any architect’s plans, sales plans, sale brochures, advertisements, representations, warranties, statements or estimates of any nature whatsoever, whether written or oral, made by the Promoter, its employees, or its selling agents/brokers, or otherwise including but not limited to any representations relating to the said Land, or the said Plot or any other physical characteristics thereof, or the services to be provided to the Allottee, the estimated facilities/amenities to be made available to the Allottee.</td>  
+                    </tr>  
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;" >N.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee acknowledges that the Promoter has readily provided all the information, clarifications with regard to the terms of this Agreement, as required by it to its complete satisfaction and that the Allottee has read and understood the present Agreement. Except to the extent contained herein, no other oral or written representation or statement made by the Promoter or any third party claiming under it, shall be considered to be a part of this Agreement or binding on the Promoter.</td>  
+                    </tr> 
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;" >O.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee has confirmed to the Promoter that it is entering into this Agreement with full knowledge of all the laws, by-laws, rules, regulations, notifications, as may be applicable to the Project as well as the said Plot, and that it has clearly read and understood the rights and obligations of the Promoter, as well as all its own rights, duties, responsibilities and obligations under each and every clause of this Agreement.</td>  
+                    </tr> 
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;" >P.</td>    
+                        <td style="padding-top:10px;" align="justify">The Allottee has represented and warranted to the Promoter that it has the legal and valid power and authority to enter into and perform this Agreement.</td>  
+                    </tr> 
+                    <tr>                
+                        <td style="padding-top:10px;vertical-align: top;" >Q.</td>    
+                        <td style="padding-top:10px;" align="justify">The Promoter, relying on the confirmations, representations and assurances of the Allottee to faithfully abide by all the terms, conditions and stipulations agreed herein in letter and spirit, has accepted in good faith the Application and is now willing to enter into this Agreement on the terms and conditions hereinafter set forth in this Agreement.</td>  
+                    </tr> 
+                    
+                </table> 
+            </div>
+            <div style="page-break-before: always"></div>
+            <div style="margin-left:33px;margin-top:60px;">
+                <p><b>NOW, THEREFORE, THIS AGREEMENT BY AND BETWEEN THE PARTIES WITNESSES AS UNDER:</b></p>
+                <p><b>1. DEFINITIONS</b></p>
+                <p align="justify">In addition to the terms defined elsewhere in this Agreement, the following terms, wherever used in this Agreement, when capitalized, shall have the meaning assigned herein, unless repugnant to or contrary to the context hereof. When not capitalized, such words shall be attributed their ordinary meaning:</p>
+                <p align="justify"><b>“Act”</b> shall mean the Punjab Apartment and Property Regulation Act, 1995.</p>
+                <p align="justify"><b>“Agreement”</b> shall mean this Plot Buyer’s Agreement including all preliminary recitals, annexures and exhibits attached hereto executed by the Promoter and the Allottee.</p>
+                <p align="justify"><b>“Application”</b> shall mean the application dated 17/Aug/2022 for the provisional booking of the said Plot in the AIPL Dreamcity Ludhiana (Formerly Known as IREO Waterfront).</p>
+                <p align="justify"><b>“Basic Sale Price”</b> shall have the same meaning as ascribed to it in Clause 3 of this Agreement.</p>
+                <p align="justify"><b>“Commitment Period”</b> shall have the same meaning as ascribed to it in Clause 11 of this Agreement.</p>
+                <p align="justify"><b>“Competent Authority”</b> shall mean the Competent Authority under the Punjab Rules.</p>
+                <p align="justify"><b>“Conveyance Deed”</b> shall mean deed of conveyance/sale which shall confer the title of the said Plot in favour of the Allottee in accordance with this Agreement.</p>
+                <p align="justify"><b>“Delay Compensation”</b> shall have the same meaning as ascribed to it in Clause 11 of this Agreement.</p>
+                <p align="justify"><b>“Earnest Money”</b> shall have the same meaning as ascribed to it in Clause 6 of this Agreement.</p>
+                <p align="justify"><b>“EDC”</b> shall mean the External Development Charges as recoverable under the provisions of the Act and shall include interest thereon/carrying cost of the Promoter, at the rate charged by the Competent Authority under the Act.</p>
+                <p align="justify"><b>“Exemption”</b> shall mean an exemption under Section 44(2) of the Act to the extent described in the preliminary recital C of this Agreement.</p>
+                <p style="page-break-before: always"></p>
+                <p align="justify" style="margin-top:60px;"><b>“Force Majeure”</b> shall mean any event beyond the reasonable control of the Promoter or in combination with other events or circumstances which cannot (i) by the exercise of reasonable diligence, or (ii) despite the adoption of reasonable precautions and/or alternative measures, have been prevented, or caused to have been prevented, and which impairs or adversely affects the Promoter’s ability to perform its obligation under this Agreement, and which events and circumstances shall include but not be limited to a) acts of God, i.e. fire, drought, flood, earthquake, epidemics, natural disasters or deaths or disabilities; b) explosions or accidents, air crashes and shipwrecks; c) strikes or lock outs, industrial dispute; d) non-availability of cement, steel or other construction material due to strikes of manufactures, suppliers, transporters or other intermediaries or otherwise; e) war and hostilities of war, riots or civil commotion; f) non-grant, refusal, delay, withholding or cancellation of any approval from any governmental authority or imposition of any adverse condition or obligation in any approvals from any governmental authority, including delay in issuance of the Occupation Certificate, Completion Certificate and/or any other approvals/certificate as may be required; g) any matter, issue relating to the grant of approvals/permissions, notices, notifications by the Competent Authority becoming subject matter of any suit/writ before a Court of law; h) the promulgation of or amendment in any law, rule or regulation or the issue of any injunction, court order or direction from any governmental authority that prevents or restricts the Promoter from complying with any or all the terms and conditions as agreed in this Agreement; i) economic recession; j) any event or circumstances analogous to the foregoing.</p>
+                <p align="justify"><b>“Holding Charges”</b> shall have the same meaning as ascribed to it in Clause 11 of this Agreement.</p>
+                <p align="justify"><b>“IFMS”</b> shall have the same meaning as ascribed to it in Clause 15 of this Agreement.</p>
+                <p align="justify"><b>“Land”</b> shall have the same meaning as ascribed to it in the Preliminary Recital A of this Agreement.</p>
+                <p align="justify"><b>“Layout Plans”</b> shall have the same meaning as ascribed to it in the Preliminary Recital C of this Agreement.</p>
+                <p align="justify"><b>“License”</b> shall have the same meaning as ascribed to it in the Preliminary Recital C of this Agreement.</p>
+                <p align="justify"><b>“Maintenance Service Agency”</b> or <b>“MSA”</b> shall mean the person appointed/designated for providing all or any of the services related to the maintenance and upkeep of the Project.</p>
+                <p align="justify"><b>“Maintenance Agreement”</b> shall mean the maintenance agreement to be executed between the Allottee, Promoter and the MSA.</p>
+                <p align="justify"><b>“Notice of Possession”</b> shall have the same meaning as ascribed to it in Clause 11 of this Agreement.</p>
+                <p align="justify"><b>“Notice of Termination”</b> shall have the same meaning as ascribed to it in Clause 20.1.1 of this Agreement.</p>
+                <p align="justify"><b>“Offer of Conveyance”</b> shall have the same meaning as ascribed to it Clause 11 of this Agreement.</p>
+                <p align="justify"><b>“Payment Plan”</b> shall mean the payment plan attached to this Agreement in Annexure–II.</p>
+                <p style="page-break-before: always"></p>
+                <p align="justify" style="margin-top:60px;"><b>“PLC”</b> shall mean the Preferential Location Charges referred to in Clause 3 and shall have the same meaning as ascribed to it in Clause 10 of this Agreement.</p>
+                <p align="justify" ><b>“Plots”</b> in its generic sense, have the same meaning as ascribed to it in the Preliminary Recital D.</p>
+                <p align="justify"><b>“Plot”</b> shall have the same meaning as ascribed to it in the Preliminary Recital H.</p>
+                <p align="justify"><b>“PRERA</b> Rules” shall mean the Punjab State Real Estate (Regulation and Development) Rules, 2017.</p>
+                <p align="justify"><b>“PSPCL”</b> shall mean the Punjab State Power Corporation Ltd. and shall include its successors for the time being.</p>
+                <p align="justify"><b>“Punjab Rules”</b> shall mean the Punjab Urban Planning &amp; Development Authority (Building) Rules, 1996.</p>
+                <p align="justify"><b>“RERA”</b> shall mean the Real Estate (Regulation and Development) Act, 2016.</p>
+                <p align="justify"><b>“RWA”</b> or the Residents Welfare Association shall mean the registered society comprising the owners in the AIPL Dreamcity Ludhiana (Formerly Known as IREO Waterfront) or parts thereof that may be formed in due course by the Promoter pursuant to the provisions of the Punjab Apartment Ownership Act.</p>
+                <p align="justify"><b>“Total Price”</b> shall have the same meaning as ascribed to it in Clause 3 of this Agreement.</p>
+                <p align="justify"><b>“Site Plan”</b> shall mean the Site Plan of the Plot attached to this Agreement as Annexure-I.</p>
+                <p align="justify"><b>“Taxes”</b> shall mean all taxes, cesses, fees, levies and/or surcharges paid or payable by the Promoter to the Government or any other statutory authority and/or designated agency if any prescribed by the Government by whatever name called as may be applicable, levied or charged or to be levied or charged in connection with the construction of the Project now or in future or any increase thereof.</p>
+                <p align="justify"><b>“TP Act”</b> shall mean the Transfer of Property Act, 1882.</p>
+                <p align="justify"><b>“Zoning Plan”</b> shall have the same meaning as ascribed to it under the Punjab Rules.</p>  
+                <table style="width:100%;">
+                    <tr>
+                        <th style="width:5%"></th>
+                        <th style="width:95%"></th>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;"><b>2.</b></td>
+                        <td style="padding-top:10px"><b>INTERPRETATION</b></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px"></td>
+                        <td style="padding-top:10px" align="justify">Unless the context otherwise requires in this Agreement:</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align:top;">2.1</td>
+                        <td align="justify" style="padding-top:10px">The use of words in the singular shall include the plural and use of words in the masculine, feminine or neuter gender shall include the other two;</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">2.2</td>
+                        <td align="justify" style="padding-top:10px">Reference to any law shall include such law as from time to time enacted, amended, supplemented or re-enacted;</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">2.3</td>
+                        <td align="justify" style="padding-top:10px">Reference to the words “include” or “including” shall be construed without limitation;</td>
+                    </tr>
+                    <tr style="page-break-before: always"></tr>
+                    <tr>
+                        <td style="padding-top:70px;vertical-align: top;">2.4</td>
+                        <td align="justify" style="padding-top:70px">Any reference in this Agreement to the terms “herein”, “hereto”, “hereunder”, “hereof”, or “thereof” or similar terms used in this Agreement refer to this entire Agreement and not to the particular provision in which the term is used except where the context otherwise requires. Unless otherwise stated, all references herein to clauses, sections or other provisions are references to clauses, sections or other provisions of this Agreement;</td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">2.5</td>
+                        <td align="justify" style="padding-top:10px">Reference to this Agreement, or any other agreement, deed or other instrument or document shall be construed as a reference to this Agreement, or such other agreement, deed or other instrument or document as the same may from time to time be amended, varied, supplemented or novated;</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">2.6</td>
+                        <td align="justify" style="padding-top:10px">The headings/captions in this Agreement are given for convenience and are indicative only. They do not purport to define, limit or otherwise qualify the scope of this Agreement or the intent of any provision hereof. The true interpretation of any matter/clauses in this Agreement shall be derived by reading the various clauses in this Agreement as a whole and not in isolation or in parts or in terms of the captions provided;</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">2.7</td>
+                        <td align="justify" style="padding-top:10px">The preliminary recitals are an integral part of this Agreement and any provisions contained in the preliminary recitals including any representations and warranties shall be binding on the Parties as if set forth in the main body of this Agreement.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">2.8</td>
+                        <td align="justify" style="padding-top:10px">The word ‘person’ shall mean any individual, sole proprietorship, unincorporated association, body corporate, corporation, joint venture, trust, any government authority or any other entity or organization.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">2.9</td>
+                        <td align="justify" style="padding-top:10px">In accordance with internationally accepted conversion rates, the measure of 1 (one) square yard wherever used shall be equal to 0.83612736 square meter.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;"><b>3.</b></td>
+                        <td align="justify" style="padding-top:10px"><b>CONSIDERATION AND CONDITIONS</b></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">3.1</td>
+                        <td align="justify" style="padding-top:10px">In accordance with the terms and conditions as set out in this Agreement, the Promoter hereby agrees to sell and the Allottee agrees to buy, the said Plot T066 admeasuring 1004.64 sq. yds. approximately at a total price of Rs. 10471400.00 /- ( Rupees One Crore Four Lakhs Seventy One Thousand Four Hundred Only ) hereinafter referred to as the “Total Price”. The Total Price as set out in Annexure II inter alia includes the recovery of price of land, development of the said Plot and the Common Areas, preferential location charges, charges, internal development charges, external development charges, taxes, cost of providing electric wiring, electrical connectivity to the said Plot, water line and firefighting equipment in the Common Areas, maintenance charges, etc. (which shall be monthly recurring charges), and also includes cost for providing all other facilities and amenities provided/ to be provided within the said Plot and the Project, as per the terms herein. The Allottee shall also be liable to pay for any additional capital equipment for common use, etc. which are not confirmed/quantifiable/have not been quantified on the date of the execution of this Agreement as and when demanded by the Promoter. The Total Price includes taxes (consisting of tax paid or payable by the Promoter by way of GST, Cess or any other similar taxes which may be levied, in connection with the Project and payable by the Promoter, by whatever name called) up to the date of handing over the possession of the said Plot to the Allottee and the Project to the association of allottees or the competent authority, as the case may be, after obtaining the Partial Completion Certificate; provided that in case there is any change/ modification in the taxes, the subsequent amount/Total Price payable by the Allottee to the Promoter shall be increased/ reduced based on such change/ modification.</td>
+                    </tr>
+                    <tr style="page-break-before: always"></tr>
+                    <tr>
+                        <td style="padding-top:70px;vertical-align: top;">3.2</td>
+                        <td align="justify" style="padding-top:70px">The Allottee understands and agrees that the Total Price is inclusive of the proposed electricity connection to the said Plot upto a maximum demand load of <span style="color:red;">7.5 KW.</span> If the Allottee desires the load in excess of the maximum demand load stated above, the Allottee shall pay additional charges, to be determined by the Promoter/MSA, for such additional load. The Allottee however shall separately be bound to pay the installation and meter costs as well as the advance consumption deposit, monthly minimum charges, etc., as charged/chargeable by the PSPCL and as applicable proportionately to its demand load.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">3.3</td>
+                        <td align="justify" style="padding-top:10px">The Allottee acknowledges that in addition to the payment of the aforementioned amounts of Total Plot Sale Price, it shall also be liable to make payments towards (i) stamp duty and registration charges at the time of Offer of Possession (ii) deposit with the Promoter the amount towards Replacement Fund cum Maintenance Security <b>(“RFMS”)</b> / deposit the amount towards an Interest Free Maintenance Security <b>(“IFMS”)</b>, as applicable as per the terms of this Agreement; (iii) various deposits and costs towards installation of piped gas line and meter, installation of electricity line and meter, refundable security deposit towards piped gas connection, security deposit for electrical connections, internal electrical connection charges, etc. (iv) applicable maintenance charges, (v) administration charges as may be demanded by the Promoter towards execution of the conveyance of the Plot in favour of the Allottee and (vi) Club fees and charges (all the said charges shall collectively be referred to as “Additional Costs/Deposits”).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">3.4</td>
+                        <td align="justify" style="padding-top:10px">The Total Price along with the Additional Costs/Deposits listed above shall be payable by the Allottee in the manner set out in the Payment Plan selected and agreed by the Allottee and annexed herewith as Annexure-II.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">3.5</td>
+                        <td align="justify" style="padding-top:10px">The Total Price above includes the booking amount/ Earnest Money paid by the Allottee to the Promoter towards the Plot. The Total Price also includes Taxes (consisting of tax paid or payable by the Promoter by way of GST and Cess or any other Taxes levied, in connection with the development of the Project and payable by the Promoter by whatever name called) up to the date of handing over the possession of the Plot to the Allottee.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;"></td>
+                        <td align="justify" style="padding-top:10px">Provided, however that in case there is any change/ modification in the Taxes, the subsequent amount/ Total Price payable by the Allottee to the Promoter shall be increased/ reduced based on such change/ modification;</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;"></td>
+                        <td align="justify" style="padding-top:10px">Provided further that if any of the above demands, Taxes, levies, cost, charges are enhanced or any demand for the same is made by the concerned authority after the execution of the Conveyance Deed in favour of the Allottee, then in such event the proportionate share of the Allottee shall be treated as unpaid Total Price/ consideration of the Plot and the Promoter shall have first charge/ lien on the Plot to the extent of such unpaid amount, till such amount is paid to the Promoter. The Promoter shall be entitled to satisfy any outstanding claim on this account by seeking attachment or sale of the Plot.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">3.6</td>
+                        <td align="justify" style="padding-top:10px">The Promoter shall periodically intimate in writing to the Allottee, the amount payable as stated above with respect to increase in taxes and government dues and the Allottee shall make payment demanded by the Promoter within the time and in the manner specified therein.</td>
+                    </tr>
+                    <tr style="page-break-before: always"></tr>
+                    <tr>
+                        <td style="padding-top:70px;vertical-align: top;">3.7</td>
+                        <td align="justify" style="padding-top:70px;">It is expressly made clear by the Promoter and agreed by the Allottee that the payment of Development Charges shall always be solely to the account of the Allottee and to be borne and paid by the Allottee on a prorated basis as determined by the Promoter. The EDC has been paid by the Promoter at the interim rates determined by the Government of Punjab and such payments of EDC charges have been accounted in the calculation of Total Price, however the Allottee understands that the Government of Punjab has a right to demand and recover any additional/ balance amount of EDC/Development Charges as may be determined/finalized on the basis of any enhanced rates. If the balance/enhanced/revised charges of EDC/Development Charges are levied with retrospective effect as applicable (including interest thereon as chargeable by the Government of Punjab) whether before or after the execution of the Conveyance Deed in respect of the said Plot, the Allottee agrees and undertakes to pay such balance/enhanced/ revised charges on demand by the Promoter or the MSA as the case may be.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">3.8</td>
+                        <td align="justify" style="padding-top:10px">The Total Price has been fixed after taking into account the taxes and/or other statutory dues as are determinable up to the date of the said License. The Allottee agrees and undertakes to pay any fresh incidence thereof that may be applicable on account of any fresh tax, levy, fees,charges, statutory dues or cess whatsoever including, G.S.T., etc., which shall also include any enhancement or increase thereof, even if retrospective whether on a direct or on a pro-rated basis, and the Allottee undertakes to pay such amount promptly on demand by the Promoter.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;">3.9</td>
+                        <td align="justify" style="padding-top:10px">With a view to enhance the experience of living for the residents of the AIPL Dreamcity Ludhiana (formerly known as IREO Waterfront) and in line with Promoter’s promise of making its customers experience the next level of living, the Promoter has endeavored to integrate selective high end customized and value-added services for use by the allottees at the township level and additionally it has/proposes to layout certain select services which shall be specific only to a particular phase/location or the property type, i.e., plot, villa, built-up floor, apartment etc. The Allottee agrees and understands that in addition to the general infrastructure, wherever such value-added services have been provided by the Promoter, the Promoter shall be entitled to recover costs of the same in addition to the Total Price for the plot, villa, built-up floor, apartment etc.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;"><b>4.</b></td>
+                        <td align="justify" style="padding-top:10px"><b>MODE OF PAYMENT</b></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;vertical-align: top;"></td>
+                        <td align="justify" style="padding-top:10px">All payments to be made by the Allottee under this Agreement shall, unless specified otherwise in writing by the Promoter, shall be vide a demand draft/banker’s cheque/ordinary cheque payable at par at Ludhiana in favour of “AIPL Dreamcity Ludhiana” All payments shall be subject to their actual realization in the above mentioned account. The date of credit into the above account shall be deemed to be the date of payment and exchange rates prevailing as on such date shall be applicable for payments made in foreign currency.</td>
+                    </tr>
+
+                    
+                </table>
+                
+            </div>
+            <div style="page-break-before: always"></div>
+            <div style="margin-left:33px;margin-top:100px;">
+                <table  >    
+                    <tr style="padding-top:10px;">
+                        <th style="width:45%"> </th>    
+                        <th style="width:45%;padding-left:10px;"> </th>
+                    </tr>    
+                
+                    <tr style="padding-top:10px;">                
+                        <td ><b>(ALLOTTEE)</b></td>    
+                        <td ><b>(ALLOTTEE)</b></td>   
+                    </tr>
+                    <tr >                
+                        <td style="padding-top:10px;"><b>Name: - PAN BAN Associates Private Limited</b></td>    
+                        <td align="justify" style="padding-top:10px;"><b>Name: - ----</b></td>   
+                    </tr>
+                    <tr >                
+                        <td style="padding-top:10px;"><b>Address: - 232-B, Okhla Industrial Estate,Phase-III New Delhi Delhi 110020 India</b></td>    
+                        <td align="justify" style="padding-top:10px;"><b>Address: -</b></td>   
+                    </tr>
+                    <tr >                
+                        <td style="padding-top:10px;"><b>WITNESSES:</b></td>    
+                        <td align="justify" style="padding-top:10px;"></td>   
+                    </tr>
+                    <tr >                
+                        <td style="padding-top:20px;">1.Signature:_________________________</td>    
+                        <td align="justify" style="padding-top:10px;">2.Signature:_________________________</td>   
+                    </tr>
+                    <tr >                
+                        <td style="padding-top:10px;">Name: _________________________</td>    
+                        <td align="justify" style="padding-top:10px;">Name: _________________________</td>   
+                    </tr>
+                    <tr >                
+                        <td style="padding-top:10px;">Address: _________________________</td>    
+                        <td align="justify" style="padding-top:10px;">Address: _________________________</td>   
+                    </tr>
+                </table>
+            </div>
+            <div style="page-break-before: always"></div>
+            <div  style="margin-top:60px;">
+                <p align="center"><b>Annexure-I</b></p>
+                <p align="center" ><b style="background-color:yellow;">SITE PLAN OF THE PLOT</b></p>
+            </div>
+            <div style="page-break-before: always"></div>
+            <div style="margin-left:33px;margin-top:100px;">
+                <p align="center"><b>Annexure-II</b></p>
+                <p align="center"><b>TOTAL PRICE</b></p>
+                <table style="width:100%;border:1px solid black;">
+                    <tr>
+                        <th ></th>
+                        <th></th>
+                    </tr>
+                    <tr >
+                        <td ><b>Plot No.</b></td>
+                        <td ><b>T066 Phase-4A - West Lake Commons</b></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:30px;"><b>Area</b></td>
+                        <td style="padding-top:30px;"><b>1004.64</b></td>
+                    </tr>
+                    <tr >
+                        <td style="padding-top:30px;"><b>Total Price (in Rupees)</b></td>
+                        <td style="padding-top:30px;"><b>10471400.00</b></td>
+                    </tr>
+                </table>
+                <table style="width:100%;border-collapse: collapse;margin-top:40px; ">
+                    <tr >
+                        <th align="center"  style="width:5%;border: 1px solid black; "><b>S.No</b></th>
+                        <th style="width:70%;border: 1px solid black;padding-left:5px; "><b>Break up of Charges</b></th>
+                        <th align="center" style="width:25%;border: 1px solid black; " ><b>Amount (in Rs.)</b></th>
+                    </tr>
+                    <tr >
+                        <td align="center" style="border: 1px solid black; ">1</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">Basic Sale Price of Plot at the rate of Rs. 8450.00 / - per sq. yd</td>
+                        <td align="right" style="border: 1px solid black; "><b>8489208.00</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="border: 1px solid black; ">2</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">Preferential Location Charges 0.00 /- per sq. yd.</td>
+                        <td align="right" style="border: 1px solid black; "><b>0.00</b></td>
+                    </tr>
+                    <tr >
+                        <td align="center" style="border: 1px solid black; ">3</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">External Development Charges (“EDC”) @ 1000.00 /- per sq. yd.</td>
+                        <td align="right" style="border: 1px solid black; "><b>1004640.00</b></td>
+                    </tr>
+                    <tr >
+                        <td align="center" style="border: 1px solid black; "></td>
+                        <td style="border: 1px solid black;padding-left:5px; "><b>Sales Price</b></td>
+                        <td align="right" style="border: 1px solid black; "><b>9493848 0</b></td>
+                    </tr>
+                </table>
+                <table style="width:100%;border-collapse: collapse;margin-top:40px; ">
+                    <tr >
+                        <th  style="width:5%;border: 1px solid black; "></th>
+                        <th style="width:70%;border: 1px solid black;padding-left:5px; "><b>Other Charges:</b></th>
+                        <th align="right" style="width:25%;border: 1px solid black; " ></th>
+                    </tr>
+                    <tr >
+                        <td align="center" style="border: 1px solid black; ">4</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">Interest Free Maintenance Security (“IFMS”) @ 550 /-Sq. yds</td>
+                        <td align="right" style="border: 1px solid black; "><b>552552.00</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="border: 1px solid black; ">5</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">Community Club one time membership</td>
+                        <td align="right" style="border: 1px solid black; "><b>150000.00</b></td>
+                    </tr>
+                    <tr >
+                        <td align="center" style="border: 1px solid black; ">6</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">DG Power Backup charges @ 30000/- Per KW</td>
+                        <td align="right" style="border: 1px solid black; "><b>225000.00</b></td>
+                    </tr>
+                    <tr >
+                        <td align="center" style="border: 1px solid black; ">7</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">Electricity Meter(duel) (Supply &amp; Installation)</td>
+                        <td align="right" style="border: 1px solid black; "><b>10000.00</b></td>
+                    </tr>
+                    <tr >
+                        <td align="center" style="border: 1px solid black; ">8</td>
+                        <td style="border: 1px solid black;padding-left:5px; ">Infra Electrical Connection charges-For electrical cable laying and connection charges</td>
+                        <td align="right" style="border: 1px solid black; "><b>40000.00</b></td>
+                    </tr>
+                    <tr >
+                        <td style="border: 1px solid black; "></td>
+                        <td style="border: 1px solid black; padding-left:5px;"><b>Total Sales Consideration</b></td>
+                        <td align="right" style="border: 1px solid black; "><b>10471400.00</b></td>
+                    </tr>
+                </table>
+                <p align="justify">Additionally, all other third party charges, including the stamp duty and registration charges, as well as administration charges as applicable, (to enable conveyance of the said Plot) shall be payable. Also, an Interest Free Maintenance Security (“IFMS”) at the rate of Rs. 550.00 per sq. yd. and applicable monthly Maintenance Charges for maintenance of essential services, including annual maintenance contracts for equipment and systems, proportionate charges towards procuring insurance for the Project at the applicable rate shall be deposited by the Allottee(s) with the Promoter, which shall in due course be handed over to the association of allottees of the Project.</p>
+                <p><b>Note:-</b></p>
+                <ol style="list-style-type: disc; font-size:13px;">
+                    <li align="justify">The above values are excluding taxes &amp; cesses imposed by Governmental Authority &amp; shall be payable as per the applicable rates.</li>
+                    <li  align="justify">Stamp Duty, Registration Charges, Legal/Miscellaneous and any Other Charges like- Electricity Meter Charges, Infra Electrical Connection charges, DG Power Backup Charges, Advance Maintenance charges for Twelth months, Community Club Charges etc., shall be payable as and when applicable.</li>
+                    <li align="justify">Price, terms &amp; conditions stated herein are merely indicative with a view to acquaint Allottee and are not exhaustive. Cheque/Draft to be issued in favour of AIPL Dream City Ludhiana</li>
+                </ol>
+
+            </div>
+            <div style="page-break-before: always"></div>
+            <div  style="margin-left:33px;margin-top:60px;">
+                <p align="center"><b>PAYMENT PLAN</b></p>
+                <table style="width:100%;border-collapse: collapse;">
+                    <tr>
+                        <th align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>Milestone Name</b></th>
+                        <th align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178)  "><b>BSP</b></th>
+                        <th align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178)  "><b>PLC</b></th>
+                        <th align="center" style="border: 1px solid black; background-color:rgb(168, 178, 178) "><b>EDC</b></th>
+                        <th align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178)  "><b>IFMS</b></th>
+                        <th align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178)  "><b>Club Membership Fees</b></th>
+                        <th align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178)  "><b>Other Charges</b></th>
+                        <th align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178)  "><b>Total Price In Rs. (excl taxes)</b></th>
+
+                    </tr>
+                    <tr>
+                        <td  style="border: 1px solid black;padding-left:5px; "><b>At the time of booking</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>10%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;padding-left:5px;  "><b>Within 30 Days from The Date Booking</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>10%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;padding-left:5px;  "><b>On Commencement of Club</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>50%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;padding-left:5px;  "><b>6 Months from Date of Booking</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>25%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>25%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td  style="border: 1px solid black;padding-left:5px;  "><b>On Completion of Club</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>50%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;padding-left:5px;  "><b>12 Months from Date of Booking</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>25%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>25%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;padding-left:5px;  "><b>Within 18 months of booking</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>25%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>50%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;padding-left:5px;  "><b>On offer of possession</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>5%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>100%</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black; "><b>100%</b></td>
+                        <td align="right" style="border: 1px solid black; "></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;background-color:rgb(168, 178, 178);padding-left:5px;  "><b>Total</b></td>
+                        <td align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>100%</b></td>
+                        <td align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>0</b></td>
+                        <td align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>100%</b></td>
+                        <td align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>100%</b></td>
+                        <td align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>100%</b></td>
+                        <td align="center" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>100%</b></td>
+                        <td align="right" style="border: 1px solid black;background-color:rgb(168, 178, 178) "><b>10547900.00</b></td>
+                    </tr>
+                </table>
+            </div>
+
+            
+        </body>
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,31 @@
+.THIS {
+    background-color: #f2f2f2;
+    
+}
+.THIS.tablecolumn{
+    color: blue;
+}
+
+.THIS.Tableouter{
+    height: 200px;
+    overflow: scroll;
+}
+.THIS.NewFolder{
+    display:inline-flex;
+
+}
+.THIS.Icon{
+    width:50px;
+    padding-left:8px;
+}
+.THIS.Foldername{
+    padding-left: 20px;
+    width: 70%;
+}
+.THIS.DeleteButton{
+    width:5%; 
+    padding-right:80px;
+}
+.THIS.Datarow{
+    height: 50px;
+}
