@@ -1,5 +1,6 @@
 public class AccountController {
     public List<Account> listAcc;
+    //update code for second branch
     //Testing deploying updated code on github
     //Testing deploying updated code on github in updated branch
     public List<Account> getAccountRecords(){
